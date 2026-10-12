@@ -34,7 +34,6 @@ a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
 .bay .lift{transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s}
 .bay:hover .lift,.bay:focus-visible .lift{transform:scale(1.07);filter:drop-shadow(0 0 18px rgba(212,255,58,.35))}
 .bay:focus-visible{outline:2px solid #D4FF3A;outline-offset:-2px}
-.chip{transition:background-color .2s,color .2s,border-color .2s}
 .tip{animation:tip .25s cubic-bezier(.2,.8,.2,1) both}
 @keyframes drive{0%,30%{transform:translate(0,0);opacity:1}68%{transform:translate(-130px,75px);opacity:1}76%{transform:translate(-150px,87px);opacity:0}84%{transform:translate(0,0);opacity:0}94%,100%{transform:translate(0,0);opacity:1}}
 @keyframes door{0%,10%{transform:translate(0,0)}24%,82%{transform:translate(0,-34px)}96%,100%{transform:translate(0,0)}}
@@ -94,7 +93,6 @@ a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
 .grp .gr{position:absolute;left:0;right:0;height:0;display:flex;align-items:center;gap:8px}
 .grp .gl{flex:1;min-width:0;height:2.5px;background:currentColor;border-radius:1px}
 .grp .gt{font-family:'Barlow Condensed',Manrope,sans-serif;font-weight:800;text-transform:uppercase;line-height:1;white-space:nowrap}
-.chips{scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
 @keyframes drive{0%,30%{transform:translate(0,0);opacity:1}68%{transform:translate(-130px,75px);opacity:1}76%{transform:translate(-150px,87px);opacity:0}84%{transform:translate(0,0);opacity:0}94%,100%{transform:translate(0,0);opacity:1}}
 @keyframes door{0%,10%{transform:translate(0,0)}24%,82%{transform:translate(0,-34px)}96%,100%{transform:translate(0,0)}}
 @keyframes hl{0%,100%{opacity:.7}50%{opacity:1}}
@@ -231,11 +229,6 @@ a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
 <span style="font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Flotte disponible</span>
 <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 40px; line-height: 1.1; letter-spacing: -1px; color: #FFFFFF; white-space: nowrap">Choisissez une voiture disponible</h2>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #A9B1BC; max-width: 820px">{{total}} modèles — électriques et hybrides, plus le van premium Mercedes Classe V. Survolez une voiture pour voir son prix à la journée et à la semaine.</p>
-</div>
-<div style="display: flex; gap: 8px">
-<sc-for list="{{chips}}" as="c" hint-placeholder-count="5">
-<button class="chip" onClick="{{c.pick}}" style="height: 44px; padding: 0 20px; border-radius: 999px; font-family: Manrope, sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; background: {{c.bg}}; color: {{c.fg}}; border: 1.5px solid {{c.bd}}">{{c.label}}</button>
-</sc-for>
 </div>
 </div>
 
@@ -483,11 +476,6 @@ a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
 <span style="font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Flotte disponible</span>
 <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 28px; line-height: 1.15; letter-spacing: -0.5px; color: #FFFFFF">Choisissez une voiture disponible</h2>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A9B1BC">{{total}} modèles — électriques et hybrides, plus le van premium Mercedes Classe V. Touchez une voiture pour voir son prix à la journée et à la semaine.</p>
-</div>
-<div class="chips" style="display: flex; gap: 8px; overflow-x: auto; margin: 0 -20px; padding: 0 20px">
-<sc-for list="{{chips}}" as="c" hint-placeholder-count="5">
-<button onClick="{{c.pick}}" style="height: 44px; padding: 0 18px; border-radius: 999px; font-family: Manrope, sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; flex-shrink: 0; background: {{c.bg}}; color: {{c.fg}}; border: 1.5px solid {{c.bd}}">{{c.label}}</button>
-</sc-for>
 </div>
 
 <div class="rv" style="position: relative; width: 350px; height: 736px; border-radius: 20px; border: 1px solid #1D232C; overflow: hidden; background: #0B0E12">
@@ -832,10 +820,6 @@ class Component extends DCLogic {
     const legalKey = this.state.legal || null;
     const legalDoc = legalKey ? LEGAL[legalKey] : null;
     const openLegal = (k) => { this.setState({ legal: k }); setTimeout(() => { try { const el = document.getElementById('mentions-legales'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }, 80); };
-    const chips = ['Tous', 'Électrique', 'Hybride'].map((label) => {
-      const on = label === f;
-      return { label, bg: on ? accent : 'transparent', fg: on ? '#0A0C0F' : '#D5DAE0', bd: on ? accent : '#2E3540', pick: () => this.setState({ filter: label }) };
-    });
     return {
       accent,
       total: cars.length,
@@ -853,7 +837,6 @@ class Component extends DCLogic {
       previewCount: preview.length + (preview.length > 1 ? ' modèles' : ' modèle'),
       clearPreview: () => this.setState({ pin: null, hg: null }),
       sel,
-      chips,
       open: !!this.state.open,
       noneOpen: !this.state.open,
       close: () => this.setState({ open: false }),
@@ -1093,10 +1076,6 @@ class Component extends DCLogic {
     const legalKey = this.state.legal || null;
     const legalDoc = legalKey ? LEGAL[legalKey] : null;
     const openLegal = (k) => { this.setState({ legal: k }); setTimeout(() => { try { const el = document.getElementById('mentions-legales'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }, 80); };
-    const chips = ['Tous', 'Électrique', 'Hybride'].map((label) => {
-      const on = label === f;
-      return { label, bg: on ? accent : 'transparent', fg: on ? '#0A0C0F' : '#D5DAE0', bd: on ? accent : '#2E3540', pick: () => this.setState({ filter: label }) };
-    });
     return {
       accent,
       total: cars.length,
@@ -1116,7 +1095,6 @@ class Component extends DCLogic {
       groupName: this.state.hg || '',
       clearGroup: () => this.setState({ hg: null }),
       sel,
-      chips,
       open: !!this.state.open,
       noneOpen: !this.state.open,
       close: () => this.setState({ open: false }),
