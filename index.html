@@ -515,7 +515,7 @@ a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
 
 <div data-pv-anchor="1" style="height: 226px; flex-shrink: 0; overflow: hidden; scroll-margin-top: 24px">
 <sc-if value="{{hasPreview}}" hint-placeholder-val="{{ false }}">
-<div class="rise" onTouchStart="{{holdPreview}}" style="display: flex; flex-direction: column; gap: 14px">
+<div class="rise" onTouchStart="{{holdPreview}}" onTouchEnd="{{releasePreview}}" style="display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; align-items: baseline; justify-content: center; gap: 10px; position: relative"><span style="font-family: 'Barlow Condensed', Manrope, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 3px; text-transform: uppercase; color: #D4FF3A">{{previewTitle}}</span><span style="font-size: 13px; color: #8A93A0">{{previewCount}}</span></div>
 <div data-pstrip="1" style="position: relative; display: flex; overflow-x: auto; margin: 0 -20px; padding: 2px 20px 6px; scrollbar-width: none">
 <div style="display: flex; gap: 14px; margin: 0 auto">
@@ -898,7 +898,7 @@ class Component extends DCLogic {
 class Component extends DCLogic {
   constructor(props) {
     super(props); this.state = { sel: 1, filter: 'Tous', tour: 0 };
-    this._tour = setInterval(() => { const s = this.state || {}; if (!s.hover && !s.hg && !s.pin && !s.open) this.setState({ tour: (s.tour || 0) + 1 }); }, 1800);
+    this._tour = setInterval(() => { const s = this.state || {}; if (!s.hover && !s.hg && !s.pin && !s.open && !s.hold) this.setState({ tour: (s.tour || 0) + 1 }); }, 1800);
   }
   renderVals() {
     const accent = this.props.accent ?? '#D4FF3A';
@@ -978,9 +978,9 @@ class Component extends DCLogic {
     const f = this.state.filter;
     const brandOf = (c) => c.model.split(' ')[0];
     const BR = []; cars.forEach((c) => { const b = c.model.split(' ')[0]; if (!BR.includes(b)) BR.push(b); });
-    const auto = !this.state.hg && !this.state.open, STEP = 1.6, TOUR = (BR.length * STEP).toFixed(1);
+    const auto = !this.state.hg && !this.state.open && !this.state.hold, STEP = 1.6, TOUR = (BR.length * STEP).toFixed(1);
     const tourB = auto ? BR[(this.state.tour || 0) % BR.length] : null;
-    const hg = this.state.hg || tourB;
+    const hg = this.state.hg || this.state.hold || tourB;
     const selC = this.state.open ? cars.find((c) => c.id === this.state.sel) : null;
     const pvBrand = hg || (selC ? selC.model.split(' ')[0] : null);
     const preview = pvBrand ? cars.filter((c) => c.model.split(' ')[0] === pvBrand).map((c) => { const sp = SPECS[c.model] || {}; const cur = !!selC && selC.id === c.id; return { curFlag: cur ? '1' : '0', model: c.model, bd: cur ? '#D4FF3A' : '#2A313C', glow: cur ? '0 0 18px rgba(212,255,58,.35)' : 'none', photo: sp.photo || '', price: c.week ? 'dès ' + c.week + ' €/sem' : 'Prix à venir', pick: () => { this.setState({ sel: c.id, open: true, hover: null }); setTimeout(() => { try { const el = document.querySelector('[data-card-anchor]'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }, 120); } }; }) : [];
@@ -1106,7 +1106,8 @@ class Component extends DCLogic {
       rightCol: all.slice(NT),
       groups: groupVals,
       preview,
-      holdPreview: () => { if (!this.state.hg && pvBrand) this.setState({ hg: pvBrand }); },
+      holdPreview: () => { clearTimeout(this._release); if (!this.state.hg && !this.state.hold && pvBrand) this.setState({ hold: pvBrand }); },
+      releasePreview: () => { clearTimeout(this._release); this._release = setTimeout(() => this.setState({ hold: null }), 3000); },
       hasPreview: preview.length > 0,
       previewTitle: ({ Mercedes: 'V-Class' })[pvBrand] || pvBrand || '',
       previewCount: preview.length + (preview.length > 1 ? ' modèles' : ' modèle'),
