@@ -1,0 +1,1227 @@
+<title>DRIVIOCARS.FR</title>
+<meta name="color-scheme" content="dark">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&amp;family=Montserrat:ital,wght@1,800;1,900&amp;family=Manrope:wght@400;500;600;700&amp;family=Barlow+Condensed:wght@700;800&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+:root{color-scheme:dark;--bg:#0A0C0F}
+html,body{background:var(--bg);margin:0;overflow-x:hidden}
+#site{width:max-content;transform-origin:0 0}
+</style>
+<style id="dc-css"></style>
+<script type="text/plain" id="css-desk">
+body{margin:0;background:#0A0C0F;font-family:Manrope,system-ui,sans-serif;color:#EDEFF2}
+a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
+.btn{transition:transform .25s ease,background-color .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-main:hover{box-shadow:0 10px 30px rgba(212,255,58,.25)}
+.navlink{color:#B7BEC8;transition:color .2s}.navlink:hover{color:#FFFFFF}
+.drive{animation:drive 9s cubic-bezier(.45,0,.3,1) infinite}
+.door0{animation:door 9s ease-in-out infinite}
+.hl{filter:drop-shadow(0 0 4px #F4F7D6);animation:hl 2.4s ease-in-out infinite}
+.strip{filter:drop-shadow(0 0 6px #EAF7B8)}
+.floaty{animation:floaty 5s ease-in-out infinite}
+.rise{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.lanecar{animation:lane 12s linear infinite}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 40s linear infinite}
+.shake{animation:shake 1.6s ease-in-out infinite}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-out infinite}
+.bay{transition:background-color .3s}
+.bay:hover{background-color:rgba(212,255,58,.05)}
+.bay .lift{transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s}
+.bay:hover .lift,.bay:focus-visible .lift{transform:scale(1.07);filter:drop-shadow(0 0 18px rgba(212,255,58,.35))}
+.bay:focus-visible{outline:2px solid #D4FF3A;outline-offset:-2px}
+.chip{transition:background-color .2s,color .2s,border-color .2s}
+.tip{animation:tip .25s cubic-bezier(.2,.8,.2,1) both}
+@keyframes drive{0%,30%{transform:translate(0,0);opacity:1}68%{transform:translate(-130px,75px);opacity:1}76%{transform:translate(-150px,87px);opacity:0}84%{transform:translate(0,0);opacity:0}94%,100%{transform:translate(0,0);opacity:1}}
+@keyframes door{0%,10%{transform:translate(0,0)}24%,82%{transform:translate(0,-34px)}96%,100%{transform:translate(0,0)}}
+@keyframes hl{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lane{from{transform:translateX(-180px)}to{transform:translateX(1380px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shake{0%,100%{transform:translateY(0)}25%{transform:translateY(-4px)}75%{transform:translateY(4px)}}
+@keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.8);opacity:0}}
+@keyframes tip{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+.heroimg{-webkit-mask-image:radial-gradient(ellipse 72% 70% at 55% 50%,#000 72%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 55% 50%,#000 72%,transparent 100%)}
+.grp{position:absolute;cursor:pointer;transition:opacity .35s ease,color .35s ease,filter .35s ease}
+.grp .ge{position:absolute;top:0;width:4px;height:100%;background:currentColor;border-radius:1px}
+.grp .gr{position:absolute;left:0;right:0;height:0;display:flex;align-items:center;gap:12px}
+.grp .gl{flex:1;min-width:0;height:4px;background:currentColor;border-radius:1px}
+.grp .gt{font-family:'Barlow Condensed',Manrope,sans-serif;font-weight:800;text-transform:uppercase;line-height:1;white-space:nowrap}
+.spot{border-radius:6px;transition:box-shadow .25s ease,background-color .25s ease}
+.spot:hover,.spot:focus-visible{outline:none;background-color:rgba(212,255,58,.06);box-shadow:inset 0 0 0 2px #D4FF3A,0 0 28px rgba(212,255,58,.35)}
+.logo{display:flex;align-items:center;gap:10px;font-family:Montserrat,sans-serif;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.5px;color:#FFFFFF;line-height:1}
+.logo-bar{display:block;width:7px;height:1.05em;background:#FFFFFF;transform:skewX(-20deg);box-shadow:0 0 12px rgba(255,255,255,.35)}
+.fade-edges{-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 76%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 24%,#000 76%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 76%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 24%,#000 76%,transparent 100%);mask-composite:intersect}
+.store{transition:transform .2s ease,border-color .2s ease}.store:hover{transform:translateY(-2px);border-color:#D4FF3A}
+.minibadge{transition:border-color .2s}.minibadge:hover{border-color:#D4FF3A}
+.topbar a.tlink{color:#D4FF3A;font-weight:700}
+.promo{position:relative;overflow:hidden;border:1px solid rgba(212,255,58,.45);background:#12160A;animation:promoGlow 3s ease-in-out infinite;transition:border-color .2s,transform .2s}
+.promo:hover{border-color:#D4FF3A}
+.promo::after{content:"";position:absolute;top:0;left:-40%;width:30%;height:100%;background:linear-gradient(100deg,transparent,rgba(212,255,58,.18),transparent);animation:promoShine 4s ease-in-out infinite;pointer-events:none}
+@keyframes promoGlow{0%,100%{box-shadow:0 0 0 0 rgba(212,255,58,0),0 0 14px rgba(212,255,58,.12)}50%{box-shadow:0 0 0 4px rgba(212,255,58,.08),0 0 28px rgba(212,255,58,.35)}}
+@keyframes promoShine{0%,55%{left:-40%}100%{left:130%}}
+.pthumb .pimg{transition:border-color .2s,box-shadow .2s,transform .2s}.pthumb:hover .pimg,.pthumb:focus-visible .pimg{border-color:#D4FF3A !important;box-shadow:0 0 18px rgba(212,255,58,.35);transform:translateY(-2px)}
+@keyframes grpTour{0%{opacity:.68;color:#ECEEE6;filter:none}3%,11%{opacity:1;color:#D4FF3A;filter:drop-shadow(0 0 10px rgba(212,255,58,.55))}14.3%,100%{opacity:.68;color:#ECEEE6;filter:none}}
+@keyframes litTour{0%{opacity:0}3%,11%{opacity:1}14.3%,100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.grp,.lit{animation:none !important}}
+.pvlist{scrollbar-width:thin;scrollbar-color:#2E3540 transparent}.pvlist::-webkit-scrollbar{width:6px}.pvlist::-webkit-scrollbar-thumb{background:#2E3540;border-radius:3px}
+.fleetmodal{animation:fmIn .25s ease both}.modalcard{animation:fmCard .35s cubic-bezier(.2,.8,.2,1) both}@keyframes fmIn{from{opacity:0}to{opacity:1}}@keyframes fmCard{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.recruit{transition:border-color .25s,box-shadow .25s}.recruit:hover{border-color:#D4FF3A;box-shadow:0 0 40px rgba(212,255,58,.12)}
+.navbtn{transition:border-color .2s,background-color .2s}.navbtn:hover{background-color:#1B2210;box-shadow:0 0 22px rgba(212,255,58,.4)!important}
+</script>
+<script type="text/plain" id="css-mob">
+body{margin:0;background:#0A0C0F;font-family:Manrope,system-ui,sans-serif;color:#EDEFF2}
+a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
+.btn{transition:transform .25s ease}.btn:active{transform:scale(.97)}
+.drive{animation:drive 9s cubic-bezier(.45,0,.3,1) infinite}
+.door0{animation:door 9s ease-in-out infinite}
+.hl{filter:drop-shadow(0 0 4px #F4F7D6);animation:hl 2.4s ease-in-out infinite}
+.strip{filter:drop-shadow(0 0 6px #EAF7B8)}
+.floaty{animation:floaty 5s ease-in-out infinite}
+.rise{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 40s linear infinite}
+.shake{animation:shake 1.6s ease-in-out infinite}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-out infinite}
+.bay .lift{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.bay:focus-visible{outline:2px solid #D4FF3A;outline-offset:-2px}
+.grp{position:absolute;cursor:pointer;transition:opacity .35s ease,color .35s ease,filter .35s ease;-webkit-tap-highlight-color:transparent}
+.grp .ge{position:absolute;top:0;width:2.5px;height:100%;background:currentColor;border-radius:1px}
+.grp .gr{position:absolute;left:0;right:0;height:0;display:flex;align-items:center;gap:8px}
+.grp .gl{flex:1;min-width:0;height:2.5px;background:currentColor;border-radius:1px}
+.grp .gt{font-family:'Barlow Condensed',Manrope,sans-serif;font-weight:800;text-transform:uppercase;line-height:1;white-space:nowrap}
+.chips{scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+@keyframes drive{0%,30%{transform:translate(0,0);opacity:1}68%{transform:translate(-130px,75px);opacity:1}76%{transform:translate(-150px,87px);opacity:0}84%{transform:translate(0,0);opacity:0}94%,100%{transform:translate(0,0);opacity:1}}
+@keyframes door{0%,10%{transform:translate(0,0)}24%,82%{transform:translate(0,-34px)}96%,100%{transform:translate(0,0)}}
+@keyframes hl{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lanev{from{transform:translateY(-120px)}to{transform:translateY(970px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shake{0%,100%{transform:translateY(0)}25%{transform:translateY(-4px)}75%{transform:translateY(4px)}}
+@keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.8);opacity:0}}
+.heroimg{-webkit-mask-image:radial-gradient(ellipse 72% 70% at 55% 50%,#000 72%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 55% 50%,#000 72%,transparent 100%)}
+.logo{display:flex;align-items:center;gap:10px;font-family:Montserrat,sans-serif;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.5px;color:#FFFFFF;line-height:1}
+.logo-bar{display:block;width:7px;height:1.05em;background:#FFFFFF;transform:skewX(-20deg);box-shadow:0 0 12px rgba(255,255,255,.35)}
+.fade-edges{-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 76%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 24%,#000 76%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 76%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 24%,#000 76%,transparent 100%);mask-composite:intersect}
+.perks3>*:last-child{grid-column:1 / -1}
+.store{transition:transform .2s ease,border-color .2s ease}.store:hover{transform:translateY(-2px);border-color:#D4FF3A}
+.minibadge{transition:border-color .2s}.minibadge:hover{border-color:#D4FF3A}
+.topbar a.tlink{color:#D4FF3A;font-weight:700}
+.promo{position:relative;overflow:hidden;border:1px solid rgba(212,255,58,.45);background:#12160A;animation:promoGlow 3s ease-in-out infinite;transition:border-color .2s,transform .2s}
+.promo:hover{border-color:#D4FF3A}
+.promo::after{content:"";position:absolute;top:0;left:-40%;width:30%;height:100%;background:linear-gradient(100deg,transparent,rgba(212,255,58,.18),transparent);animation:promoShine 4s ease-in-out infinite;pointer-events:none}
+@keyframes promoGlow{0%,100%{box-shadow:0 0 0 0 rgba(212,255,58,0),0 0 14px rgba(212,255,58,.12)}50%{box-shadow:0 0 0 4px rgba(212,255,58,.08),0 0 28px rgba(212,255,58,.35)}}
+@keyframes promoShine{0%,55%{left:-40%}100%{left:130%}}
+.pthumb .pimg{transition:border-color .2s,box-shadow .2s,transform .2s}.pthumb:hover .pimg,.pthumb:focus-visible .pimg{border-color:#D4FF3A !important;box-shadow:0 0 18px rgba(212,255,58,.35);transform:translateY(-2px)}
+@keyframes grpTour{0%{opacity:.68;color:#ECEEE6;filter:none}3%,11%{opacity:1;color:#D4FF3A;filter:drop-shadow(0 0 10px rgba(212,255,58,.55))}14.3%,100%{opacity:.68;color:#ECEEE6;filter:none}}
+@keyframes litTour{0%{opacity:0}3%,11%{opacity:1}14.3%,100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.grp,.lit{animation:none !important}}
+.navbtn{transition:border-color .2s,background-color .2s}.navbtn:hover{background-color:#1B2210}
+.fleetmodal{animation:fmIn .25s ease both}.modalcard{animation:fmCard .35s cubic-bezier(.2,.8,.2,1) both}@keyframes fmIn{from{opacity:0}to{opacity:1}}@keyframes fmCard{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.recruit{transition:border-color .25s,box-shadow .25s}.recruit:active{border-color:#D4FF3A}
+</script>
+<template id="tpl-desk">
+
+<div style="width: 1440px; min-height: 4340px; background: #0A0C0F; display: flex; flex-direction: column; overflow: hidden; position: relative">
+
+
+<!-- NAV -->
+<div style="padding: 18px 80px 6px; display: flex; justify-content: center; flex-shrink: 0">
+<div class="topbar promo" style="height: 52px; padding: 0 10px 0 12px; display: inline-flex; align-items: center; gap: 16px; border-radius: 999px; font-size: 15px; color: #E6EAEF"><span style="padding: 5px 12px; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-size: 11px; font-weight: 800; letter-spacing: 1px">NOUVEAU</span><span>Chauffeur VTC ? Travaillez avec l’app <a class="tlink" href="https://driviovtc.fr">Drivio VTC</a> — statut salarié, liberté d’indépendant.</span><span style="display: flex; gap: 8px"><a class="minibadge" href="https://apps.apple.com/us/app/drivio-vtc/id6766359221" aria-label="Drivio VTC sur l’App Store" style="width: 32px; height: 32px; border-radius: 8px; border: 1px solid #3A414C; display: flex; align-items: center; justify-content: center; background: #000000"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFFFFF" d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-2.99-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 2.99.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.67zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"></path></svg></a><a class="minibadge" href="https://play.google.com/store/apps/details?id=com.drivio.mobile" aria-label="Drivio VTC sur Google Play" style="width: 32px; height: 32px; border-radius: 8px; border: 1px solid #3A414C; display: flex; align-items: center; justify-content: center; background: #000000"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 2.3c-.2.2-.3.6-.3 1v17.4c0 .4.1.8.3 1l.1.1L13.4 12v-.2L3.7 2.2z"></path><path fill="#FFCE00" d="M16.6 15.3l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2z"></path><path fill="#FF3A44" d="M16.7 15.2L13.4 12l-9.8 9.7c.4.4.9.4 1.6.1l11.5-6.6"></path><path fill="#00F076" d="M16.7 8.8L5.2 2.2c-.7-.4-1.2-.3-1.6.1l9.8 9.7z"></path></svg></a></span></div>
+</div>
+<header style="height: 88px; padding: 0 80px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1A1F27; flex-shrink: 0">
+<a href="#top" class="logo" style="font-size: 26px; gap: 0px">DRIVIO<span style="color: rgb(212, 255, 58)">CARS</span>.FR</a>
+<nav style="display: flex; gap: 40px; font-size: 15px; font-weight: 600">
+<a class="navlink" href="#fleet">Flotte</a>
+<a class="navlink" href="#how">Comment ça marche</a>
+<a class="navlink" href="#partners">Partenaires</a>
+<a class="navlink" href="#contacts">Contact</a>
+</nav>
+<a class="btn btn-main" href="#fleet" style="height: 48px; padding: 0 24px; display: flex; align-items: center; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-weight: 700; font-size: 15px">Choisir une voiture</a>
+</header>
+
+<!-- HERO -->
+
+
+<!-- HOW -->
+<section id="top" style="height: 633px; padding: 0 80px 20px; display: flex; flex-direction: column; gap: 16px; position: relative; flex-shrink: 0; border-radius: 0px; box-sizing: border-box">
+<div style="flex: 1 1 0%; min-height: 0; display: flex; align-items: center; gap: 24px; position: relative">
+<div style="width: 560px; flex-shrink: 0; display: flex; flex-direction: column; gap: 22px; position: relative; z-index: 2">
+<div class="rise" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: #B7BEC8; letter-spacing: 1.5px; text-transform: uppercase"><span style="width: 28px; height: 2px; background: rgb(212, 255, 58)"></span>Location VTC<br></div>
+<h1 class="rise" style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 48px; line-height: 1.05; letter-spacing: -1.5px; color: #FFFFFF; animation-delay: .1s">Votre voiture de&nbsp;travail vous attend au&nbsp;garage</h1>
+<div style="margin: 0; width: 240px; font-size: 24px; white-space: pre-wrap;"></div><p class="rise" style="margin: 0; font-size: 17px; line-height: 1.55; color: #A9B1BC; max-width: 500px; animation-delay: .2s">Drivio — des voitures pour travailler sur Uber, Bolt et Heetch ainsi que les autres plateformes. Sans caution, assurances comprises: choisissez une voiture disponible en ligne et démarrez en 10 minutes.</p>
+<div class="rise" style="display: flex; gap: 14px; animation-delay: .3s">
+<a class="btn btn-main" href="#fleet" style="height: 58px; padding: 0 30px; display: flex; align-items: center; gap: 10px; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-weight: 700; font-size: 16px">Voir la flotte
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn" href="https://wa.me/33768580000" style="height: 58px; padding: 0 28px; display: flex; align-items: center; gap: 10px; border-radius: 999px; border: 1.5px solid #2E3540; color: #FFFFFF; font-weight: 600; font-size: 16px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"></path></svg>Écrire sur WhatsApp</a>
+<a class="btn" href="tel:+33768580000" aria-label="Appeler Drivio" title="Appeler" style="width: 58px; height: 58px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1.5px solid #2E3540; color: #FFFFFF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
+</div>
+
+</div>
+
+<div class="rise" style="flex-grow: 1; height: 100%; position: relative; animation-delay: .15s">
+<img class="heroimg" src="img/03b544793ba164dadfa2188ccc04a0e9.webp" alt="Garage Drivio : voitures garées, une Toyota Camry noire sort par la porte ouverte" style="position: absolute; left: 0px; top: 0px; width: 820px; height: auto; display: block">
+
+
+<div class="floaty" style="position: absolute; left: 470px; top: 420px; padding: 14px 18px; border-radius: 16px; background: rgba(18,21,26,.85); border: 1px solid #262D37; display: flex; align-items: center; gap: 12px; animation-delay: -2.5s; width: 183px; height: 33px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4FF3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l1.5-6h9L18 17M8 11l1-4h6l1 4"></path><circle cx="8" cy="17" r="1.5"></circle><circle cx="16" cy="17" r="1.5"></circle></svg>
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #8A93A0">Sortie du garage</span><span style="font-size: 15px; font-weight: 700; color: #FFFFFF">démarrage en 10 minutes</span></div>
+</div></div>
+</div>
+<div class="rise" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-radius: 20px; animation-delay: .4s; border: 1px solid #1D232C; background: #0D1014; overflow: hidden">
+<sc-for list="{{perks}}" as="k" hint-placeholder-count="3">
+<div style="padding: 16px 24px; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 16px; row-gap: 2px; align-items: center; border-right: 1px solid #1D232C">
+<span style="grid-row: span 2; font-family: Unbounded, sans-serif; font-size: 20px; color: {{accent}}; white-space: nowrap">{{k.big}}</span>
+<span style="font-size: 15px; font-weight: 700; color: #FFFFFF">{{k.title}}</span>
+<span style="font-size: 13px; line-height: 1.4; color: #8A93A0">{{k.text}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+<section style="padding: 28px 80px 27px; flex-shrink: 0">
+<a href="#partners" class="recruit" style="position: relative; display: grid; grid-template-columns: 300px minmax(0, 1fr) auto; gap: 40px; align-items: center; height: 200px; padding: 0 44px 0 0; border-radius: 28px; background: #0D1014; border: 1px solid #262D37; overflow: hidden; text-decoration: none">
+<div style="position: absolute; right: -80px; top: -120px; width: 360px; height: 360px; border-radius: 50%; background: #D4FF3A; opacity: .06; filter: blur(60px); pointer-events: none"></div>
+<img src="img/a8587ff5f90d48f22315f4d72530309b.webp" alt="Poignée de main devant le garage Drivio" class="fade-edges" style="width: 300px; height: 200px; object-fit: cover; display: block">
+<div style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Recrutement · chauffeurs VTC</span>
+<span style="font-family: Unbounded, sans-serif; font-size: 30px; line-height: 1.15; letter-spacing: -0.5px; color: #FFFFFF">Chauffeur VTC&nbsp;? Travaillez avec&nbsp;Drivio</span>
+<span style="font-size: 16px; line-height: 1.5; color: #A9B1BC">Statut salarié, liberté d’indépendant — rejoignez nos chauffeurs et nos partenaires.</span>
+</div>
+<span class="btn btn-main" style="height: 56px; padding: 0 28px; display: flex; align-items: center; gap: 10px; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-weight: 700; font-size: 16px; white-space: nowrap">En savoir plus<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+</section>
+<section id="how" style="padding: 40px 80px 36px; display: flex; flex-direction: column; gap: 28px; flex-shrink: 0; border-top: 1px solid #151A21">
+<div class="rv" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Comment ça marche</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 44px; line-height: 1.1; letter-spacing: -1px; color: #FFFFFF; max-width: 800px">Trois étapes de&nbsp;la demande à&nbsp;la première course</h2>
+</div>
+<p style="margin: 0; max-width: 380px; font-size: 16px; line-height: 1.6; color: #A9B1BC">Pas de file d’attente en agence : vous réservez la voiture en ligne et récupérez les clés directement au garage.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="3">
+<div class="rv" style="padding: 32px; border-radius: 24px; background: #111419; border: 1px solid #1D232C; display: flex; flex-direction: column; gap: 20px; min-height: 250px; box-sizing: border-box">
+<span style="font-family: Unbounded, sans-serif; font-size: 15px; color: #0A0C0F; background: {{accent}}; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center">{{s.n}}</span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 700; color: #FFFFFF">{{s.title}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A9B1BC">{{s.text}}</p>
+</div>
+</sc-for>
+<div class="rv" style="padding: 32px; border-radius: 24px; background: #D4FF3A; display: flex; flex-direction: column; gap: 14px; min-height: 250px; box-sizing: border-box; color: #0A0C0F">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">Documents requis</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; font-weight: 600; width: 248px; height: 91px"><span>— Passeport ou carte d’identité</span><span>— Carte VTC</span><span>— Permis de conduire</span></div>
+</div>
+</div>
+</section>
+
+<!-- FLEET -->
+
+
+<!-- PARTNERS -->
+
+
+<!-- FOOTER -->
+<section id="fleet" style="position: relative; padding: 48px 80px 48px; display: flex; flex-direction: column; gap: 28px; flex-shrink: 0; background: #0D1014; border-top: 1px solid #151A21; border-bottom: 1px solid #151A21">
+<div class="rv" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Flotte disponible</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 40px; line-height: 1.1; letter-spacing: -1px; color: #FFFFFF; white-space: nowrap">Choisissez une voiture disponible</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #A9B1BC; max-width: 820px">{{total}} modèles — électriques et hybrides, plus le van premium Mercedes Classe V. Survolez une voiture pour voir son prix à la journée et à la semaine.</p>
+</div>
+<div style="display: flex; gap: 8px">
+<sc-for list="{{chips}}" as="c" hint-placeholder-count="5">
+<button class="chip" onClick="{{c.pick}}" style="height: 44px; padding: 0 20px; border-radius: 999px; font-family: Manrope, sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; background: {{c.bg}}; color: {{c.fg}}; border: 1.5px solid {{c.bd}}">{{c.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; gap: 24px; align-items: stretch">
+<div class="rv" style="position: relative; width: 1106px; height: 526px; flex-shrink: 0; border-radius: 28px; border: 1px solid #1D232C; overflow: visible; background: #0B0E12">
+<img src="img/b70ace5cc058ca96c33a0720b8c15063.webp" alt="Parking Drivio vu du dessus : 23 voitures regroupées par marque" style="position: absolute; inset: 0; width: 1106px; height: 526px; border-radius: 28px; display: block">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="7">
+<div class="grp" role="button" tabindex="0" aria-label="{{g.aria}}" onMouseEnter="{{g.enter}}" onMouseLeave="{{g.leave}}" onFocus="{{g.enter}}" onBlur="{{g.leave}}" onClick="{{g.pick}}" style="position: absolute; cursor: pointer; transition: opacity .35s ease, color .35s ease, filter .35s ease; {{g.box}}; color: {{g.col}}; opacity: {{g.op}}; filter: {{g.fx}}; animation: {{g.anim}}">
+<span style="position: absolute; top: 0px; left: 0px; width: 4px; height: 100%; background: currentColor; border-radius: 1px"></span><span style="position: absolute; top: 0px; right: 0px; width: 4px; height: 100%; background: currentColor; border-radius: 1px"></span>
+<div style="position: absolute; left: 0px; right: 0px; height: 0px; display: flex; align-items: center; gap: 12px; {{g.rowPos}}"><span style="display: block; flex: 1 1 0%; min-width: 0px; height: 4px; background: currentColor; border-radius: 1px"></span><b style="font-family: 'Barlow Condensed', Manrope, sans-serif; font-weight: 800; text-transform: uppercase; line-height: 1; white-space: nowrap; font-size: 19px; letter-spacing: 2px; padding-left: 2px; {{g.txt}}">{{g.name}}</b><span style="display: block; flex: 1 1 0%; min-width: 0px; height: 4px; background: currentColor; border-radius: 1px"></span></div>
+</div>
+</sc-for>
+<sc-for list="{{topRow}}" as="b" hint-placeholder-count="12">
+<button class="spot" onMouseEnter="{{b.enter}}" onMouseLeave="{{leave}}" onFocus="{{b.enter}}" onClick="{{b.pick}}" aria-label="{{b.aria}}" style="position: absolute; {{b.pos}}; padding: 0; margin: 0; border: none; background: transparent; cursor: pointer">
+<span class="lit" style="position: absolute; inset: 4px; border-radius: 8px; -webkit-backdrop-filter: brightness(1.6) saturate(1.1); backdrop-filter: brightness(1.6) saturate(1.1); box-shadow: 0 0 26px rgba(212,255,58,.14); opacity: {{b.lit}}; transition: opacity .35s; animation: {{b.anim}}; pointer-events: none"></span><span style="position: absolute; inset: 0; border-radius: 6px; background: #0A0C0F; opacity: {{b.dim}}; transition: opacity .35s; pointer-events: none"></span><span style="position: absolute; inset: 0; border-radius: 6px; box-shadow: inset 0 0 0 2px #D4FF3A, 0 0 22px rgba(212,255,58,.4); background: rgba(212,255,58,.08); opacity: {{b.selOp}}; transition: opacity .25s; pointer-events: none"></span>
+<sc-if value="{{b.active}}" hint-placeholder-val="{{ false }}">
+<div class="tip" style="position: absolute; left: 50%; {{b.tipPos}}; z-index: 20; width: 200px; padding: 16px; border-radius: 16px; background: #F4F6F8; color: #0A0C0F; box-shadow: 0 20px 50px rgba(0,0,0,.55); text-align: left; display: flex; flex-direction: column; gap: 8px; pointer-events: none">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px"><span style="font-size: 16px; font-weight: 800">{{b.model}}</span><span style="width: 8px; height: 8px; border-radius: 50%; background: {{b.dot}}; flex-shrink: 0"></span></div>
+<span style="font-size: 13px; color: #4A5361">{{b.cls}} · {{b.gear}}</span>
+<div style="display: flex; align-items: baseline; justify-content: space-between"><span style="font-size: 18px; font-weight: 800">{{b.price}}</span><span style="font-size: 12px; font-weight: 700; color: {{b.statusColor}}">{{b.status}}</span></div>
+</div>
+</sc-if>
+</button>
+</sc-for>
+<sc-for list="{{bottomRow}}" as="b" hint-placeholder-count="12">
+<button class="spot" onMouseEnter="{{b.enter}}" onMouseLeave="{{leave}}" onFocus="{{b.enter}}" onClick="{{b.pick}}" aria-label="{{b.aria}}" style="position: absolute; {{b.pos}}; padding: 0; margin: 0; border: none; background: transparent; cursor: pointer">
+<span class="lit" style="position: absolute; inset: 4px; border-radius: 8px; -webkit-backdrop-filter: brightness(1.6) saturate(1.1); backdrop-filter: brightness(1.6) saturate(1.1); box-shadow: 0 0 26px rgba(212,255,58,.14); opacity: {{b.lit}}; transition: opacity .35s; animation: {{b.anim}}; pointer-events: none"></span><span style="position: absolute; inset: 0; border-radius: 6px; background: #0A0C0F; opacity: {{b.dim}}; transition: opacity .35s; pointer-events: none"></span><span style="position: absolute; inset: 0; border-radius: 6px; box-shadow: inset 0 0 0 2px #D4FF3A, 0 0 22px rgba(212,255,58,.4); background: rgba(212,255,58,.08); opacity: {{b.selOp}}; transition: opacity .25s; pointer-events: none"></span>
+<sc-if value="{{b.active}}" hint-placeholder-val="{{ false }}">
+<div class="tip" style="position: absolute; left: 50%; {{b.tipPos}}; z-index: 20; width: 200px; padding: 16px; border-radius: 16px; background: #F4F6F8; color: #0A0C0F; box-shadow: 0 20px 50px rgba(0,0,0,.55); text-align: left; display: flex; flex-direction: column; gap: 8px; pointer-events: none">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px"><span style="font-size: 16px; font-weight: 800">{{b.model}}</span><span style="width: 8px; height: 8px; border-radius: 50%; background: {{b.dot}}; flex-shrink: 0"></span></div>
+<span style="font-size: 13px; color: #4A5361">{{b.cls}} · {{b.gear}}</span>
+<div style="display: flex; align-items: baseline; justify-content: space-between"><span style="font-size: 18px; font-weight: 800">{{b.price}}</span><span style="font-size: 12px; font-weight: 700; color: {{b.statusColor}}">{{b.status}}</span></div>
+</div>
+</sc-if>
+</button>
+</sc-for>
+</div>
+<div onMouseEnter="{{holdPreview}}" onMouseLeave="{{releasePreview}}" style="flex: 1 1 0%; min-width: 0; height: 526px; display: flex; flex-direction: column; gap: 12px; border-radius: 22px; border: 1px solid #1D232C; background: #0B0E12; padding: 16px 14px; box-sizing: border-box">
+<sc-if value="{{hasPreview}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0"><div style="display: flex; align-items: center; justify-content: space-between; gap: 6px"><span style="font-family: 'Barlow Condensed', Manrope, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 3px; text-transform: uppercase; color: #D4FF3A">{{previewTitle}}</span><sc-if value="{{hasPin}}" hint-placeholder-val="{{ false }}"><button class="navbtn" onClick="{{clearPreview}}" aria-label="Masquer le modèle" style="width: 26px; height: 26px; padding: 0; border-radius: 50%; border: 1px solid #2E3540; background: transparent; color: #D5DAE0; font-size: 12px; cursor: pointer">✕</button></sc-if></div><span style="font-size: 12px; color: #8A93A0">{{previewCount}}</span></div>
+<div class="pvlist" style="flex: 1 1 0%; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding: 2px 2px 6px; margin: 0 -2px">
+<sc-for list="{{preview}}" as="p" hint-placeholder-count="3">
+<button class="pthumb" onClick="{{p.pick}}" aria-label="{{p.model}}" style="width: 100%; flex-shrink: 0; padding: 0; margin: 0; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; gap: 6px; text-align: left; font-family: Manrope, sans-serif">
+<span class="pimg" style="display: block; width: 100%; aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; border: 1.5px solid {{p.bd}}; box-shadow: {{p.glow}}; background: #111419; box-sizing: border-box"><img src="{{p.photo}}" alt="{{p.model}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></span>
+<span style="font-size: 13px; font-weight: 700; color: #FFFFFF; line-height: 1.25">{{p.model}}</span>
+<span style="font-size: 12px; color: #8A93A0; margin-top: -2px">{{p.price}}</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</div>
+
+<sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+<div class="fleetmodal" style="position: absolute; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; padding: 24px 40px; box-sizing: border-box">
+<div onClick="{{close}}" aria-hidden="true" style="position: absolute; inset: 0; background: rgba(6,8,10,.74); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); cursor: pointer"></div>
+<div class="modalcard" role="dialog" aria-modal="true" aria-label="{{sel.model}}" style="position: relative; width: 1200px; display: grid; grid-template-columns: 460px minmax(0, 1fr); gap: 48px; align-items: center; padding: 32px; border-radius: 28px; background: #0D1014; border: 1px solid #2A313C; box-shadow: 0 40px 120px rgba(0,0,0,.6), 0 0 0 1px rgba(212,255,58,.08)">
+<button onClick="{{close}}" aria-label="Fermer la fiche" style="position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #2A313C; background: #111419; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="width: 460px; height: 460px; border-radius: 22px; overflow: hidden; background: #111419">
+<sc-if value="{{sel.hasPhoto}}" hint-placeholder-val="{{ true }}"><img src="{{sel.photo}}" alt="{{sel.model}}" style="width: 460px; height: 460px; object-fit: cover; display: block"></sc-if>
+<sc-if value="{{sel.noPhoto}}" hint-placeholder-val="{{ false }}"><div style="width: 460px; height: 460px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #5E6773; font-size: 15px"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#3A414C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l1.5-6h9L18 17M8 11l1-4h6l1 4"></path><circle cx="8" cy="17" r="1.5"></circle><circle cx="16" cy="17" r="1.5"></circle></svg>Photo à venir</div></sc-if>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px"><div style="display: flex; align-items: center; gap: 12px; min-width: 0"><button class="navbtn" onClick="{{navPrev}}" aria-label="Voiture précédente" style="width: 48px; height: 48px; padding: 0; border-radius: 50%; border: 1.5px solid #D4FF3A; background: #111419; box-shadow: 0 0 14px rgba(212,255,58,.18); cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button><span style="font-size: 14px; font-weight: 600; color: #A9B1BC; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px">{{prevName}}</span></div><span style="display: flex; flex-direction: column; align-items: center; gap: 3px"><span style="font-size: 13px; font-weight: 700; color: #8A93A0; letter-spacing: 1px">{{navPos}}</span><span style="font-size: 11px; color: #5E6773">← → clavier</span></span><div style="display: flex; align-items: center; gap: 12px; min-width: 0"><span style="font-size: 14px; font-weight: 600; color: #A9B1BC; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px">{{nextName}}</span><button class="navbtn" onClick="{{navNext}}" aria-label="Voiture suivante" style="width: 48px; height: 48px; padding: 0; border-radius: 50%; border: 1.5px solid #D4FF3A; background: #111419; box-shadow: 0 0 14px rgba(212,255,58,.18); cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">{{sel.cls}} · place {{sel.slot}}</span>
+<span style="font-family: Unbounded, sans-serif; font-size: 40px; line-height: 1.1; color: #FFFFFF">{{sel.model}}</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+<div style="padding: 16px 18px; border-radius: 16px; background: #111419; border: 1px solid #1D232C; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #8A93A0">Par jour</span><span style="font-size: 20px; font-weight: 800; color: #FFFFFF">{{sel.dayLabel}}</span></div>
+<div style="padding: 16px 18px; border-radius: 16px; background: rgba(212,255,58,.07); border: 1px solid rgba(212,255,58,.3); display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #A9B1BC">Par semaine</span><span style="font-size: 20px; font-weight: 800; color: #D4FF3A">{{sel.weekLabel}}</span></div>
+<div style="padding: 16px 18px; border-radius: 16px; background: #111419; border: 1px solid #1D232C; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #8A93A0">Par mois</span><span style="font-size: 20px; font-weight: 700; color: #A9B1BC">{{sel.month}}</span></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px">
+<sc-for list="{{sel.specs}}" as="r" hint-placeholder-count="8">
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid #1D232C; font-size: 14px"><span style="color: #8A93A0">{{r.k}}</span><span style="color: #FFFFFF; font-weight: 700; text-align: right">{{r.v}}</span></div>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="padding: 8px 14px; border-radius: 999px; border: 1px solid #2E3540; font-size: 13px; font-weight: 600; color: #D5DAE0">Sans caution</span>
+<span style="padding: 8px 14px; border-radius: 999px; border: 1px solid #2E3540; font-size: 13px; font-weight: 600; color: #D5DAE0">Tout compris</span>
+<span style="padding: 8px 14px; border-radius: 999px; border: 1px solid #2E3540; font-size: 13px; font-weight: 600; color: #D5DAE0">Assistance 24/7</span>
+<span style="padding: 8px 14px; border-radius: 999px; border: 1px solid #2E3540; font-size: 13px; font-weight: 600; color: #D5DAE0">Démarrage en 10 min</span>
+</div>
+<div style="display: flex; align-items: center; gap: 16px">
+<a class="btn btn-main" href="{{sel.wa}}" style="height: 56px; padding: 0 30px; display: flex; align-items: center; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-weight: 700; font-size: 16px">Réserver sur WhatsApp</a><a class="btn" href="tel:+33768580000" style="height: 56px; padding: 0 22px; display: flex; align-items: center; gap: 10px; border-radius: 999px; border: 1.5px solid #2E3540; color: #FFFFFF; font-weight: 600; font-size: 16px; white-space: nowrap; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Appeler</a>
+<span style="font-size: 12px; color: #5E6773; max-width: 260px; line-height: 1.5">Données constructeur (WLTP), à titre indicatif.</span>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</section><section id="partners" style="padding: 112px 80px; display: flex; align-items: center; gap: 80px; flex-shrink: 0; width: 1285px; height: 576px">
+<div class="rv" style="width: 560px; height: 560px; flex-shrink: 0; position: relative">
+<img src="img/a8587ff5f90d48f22315f4d72530309b.webp" alt="Deux partenaires se serrent la main devant le garage Drivio" class="fade-edges" style="width: 560px; height: 560px; object-fit: cover; display: block">
+</div>
+<div class="rv" style="display: flex; flex-direction: column; gap: 28px; flex-grow: 1">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Nos offres</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 44px; line-height: 1.1; letter-spacing: -1px; color: #FFFFFF">Trois offres pour votre avenir de&nbsp;chauffeur</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #A9B1BC; max-width: 560px">Louez votre véhicule, simplifiez votre activité ou préparez votre accès à la propriété. Choisissez le parcours qui vous correspond.</p>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{partners}}" as="p" hint-placeholder-count="3">
+<div style="display: flex; gap: 18px; align-items: flex-start; padding: 20px 24px; border-radius: 18px; background: #111419; border: 1px solid #1D232C">
+<span style="width: 10px; height: 10px; margin-top: 7px; border-radius: 3px; background: {{accent}}; flex-shrink: 0"></span>
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 17px; font-weight: 700; color: #FFFFFF">{{p.title}}</span><span style="font-size: 15px; line-height: 1.5; color: #A9B1BC">{{p.text}}</span></div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 14px">
+<a class="btn btn-main" href="https://wa.me/33768580000?text=Bonjour%2C%20je%20souhaite%20d%C3%A9couvrir%20les%20offres%20Drivio%20%28Flexible%2C%20Coop%C3%A9rative%2C%20Propri%C3%A9t%C3%A9%29." style="height: 56px; padding: 0 28px; display: flex; align-items: center; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-weight: 700; font-size: 16px">Découvrir les offres</a>
+<a class="btn" href="tel:+33768580000" style="height: 56px; padding: 0 26px; display: flex; align-items: center; gap: 10px; border-radius: 999px; border: 1.5px solid #2E3540; color: #FFFFFF; font-weight: 600; font-size: 16px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Parler à un conseiller</a>
+</div>
+</div>
+</section><section id="app" style="padding: 147px 80px 147px; flex-shrink: 0">
+<div style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 64px; align-items: center; padding: 64px; border-radius: 32px; background: #0F130A; border: 1px solid #2A3312; overflow: hidden">
+<div style="position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%; background: #D4FF3A; opacity: .07; filter: blur(60px)"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Drivio VTC · l’app chauffeur</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 44px; line-height: 1.1; letter-spacing: -1px; color: #FFFFFF">Travaillez librement, gagnez mieux</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #A9B1BC; max-width: 620px">Avec l’app Drivio VTC, devenez entrepreneur-salarié&nbsp; en contrat CDI: les avantages d’un salarié tout en gardant votre indépendance. *0% de comission</p></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 32px">
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 28px; height: 28px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700; color: #FFFFFF">Statut entrepreneur-salarié</span><span style="font-size: 14px; line-height: 1.5; color: #A9B1BC">Les avantages d’un salarié, la liberté d’un indépendant.</span></div></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 28px; height: 28px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700; color: #FFFFFF">5+ plateformes en même temps</span><span style="font-size: 14px; line-height: 1.5; color: #A9B1BC">Uber, Bolt, Heetch, FreeNow — depuis une seule app.</span></div></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 28px; height: 28px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700; color: #FFFFFF">Revenus en temps réel</span><span style="font-size: 14px; line-height: 1.5; color: #A9B1BC">Salaire fixe + primes, suivis au jour le jour.</span></div></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 28px; height: 28px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700; color: #FFFFFF">Gestion simplifiée</span><span style="font-size: 14px; line-height: 1.5; color: #A9B1BC">Frais et absences déclarés directement dans l’app.</span></div></div>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+<a class="store" href="https://apps.apple.com/us/app/drivio-vtc/id6766359221" aria-label="Télécharger dans App Store" style="height: 56px; padding: 0 19px 0 13px; display: inline-flex; align-items: center; gap: 10px; border-radius: 12px; border: 1px solid #5E6773; background: #000000; color: #FFFFFF; text-decoration: none"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFFFFF" d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-2.99-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 2.99.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.67zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"></path></svg><span style="display: flex; flex-direction: column; line-height: 1.05"><span style="font-size: 10px; color: #D5DAE0">Télécharger dans</span><span style="font-size: 20px; font-weight: 600; letter-spacing: -0.3px">App Store</span></span></a>
+<a class="store" href="https://play.google.com/store/apps/details?id=com.drivio.mobile" aria-label="Disponible sur Google Play" style="height: 56px; padding: 0 19px 0 13px; display: inline-flex; align-items: center; gap: 10px; border-radius: 12px; border: 1px solid #5E6773; background: #000000; color: #FFFFFF; text-decoration: none"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 2.3c-.2.2-.3.6-.3 1v17.4c0 .4.1.8.3 1l.1.1L13.4 12v-.2L3.7 2.2z"></path><path fill="#FFCE00" d="M16.6 15.3l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2z"></path><path fill="#FF3A44" d="M16.7 15.2L13.4 12l-9.8 9.7c.4.4.9.4 1.6.1l11.5-6.6"></path><path fill="#00F076" d="M16.7 8.8L5.2 2.2c-.7-.4-1.2-.3-1.6.1l9.8 9.7z"></path></svg><span style="display: flex; flex-direction: column; line-height: 1.05"><span style="font-size: 10px; color: #D5DAE0">Disponible sur</span><span style="font-size: 20px; font-weight: 600; letter-spacing: -0.3px">Google Play</span></span></a>
+<a href="https://driviovtc.fr" style="margin-left: 8px; font-weight: 700; font-size: 15px">driviovtc.fr →</a></div>
+</div>
+<div style="font-size: 16px; line-height: 1; font-family: Manrope, system-ui, sans-serif; position: absolute; left: 67px; top: 544px">*</div></div>
+</section>
+<footer id="contacts" style="flex-grow: 1; padding: 64px 80px; background: #0D1014; border-top: 1px solid #151A21; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; justify-content: space-between; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 280px">
+<span class="logo" style="font-size: 26px; gap: 0px">DRIVIO<span style="color: rgb(212, 255, 58)">CARS</span>.FR</span>
+<span style="font-size: 15px; line-height: 1.6; color: #8A93A0">Location de voitures pour chauffeurs VTC et taxi.</span>
+</div>
+<div style="display: flex; gap: 40px; font-size: 15px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="color: #8A93A0; font-size: 13px">Téléphone</span><a href="tel:+33768580000" style="color: #FFFFFF; font-weight: 600; text-decoration: none">+33 7 68 58 00 00</a></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="color: #8A93A0; font-size: 13px">E-mail</span><a href="mailto:drivio.cars@gmail.com" style="color: #FFFFFF; font-weight: 600; text-decoration: none">drivio.cars@gmail.com</a></div>
+
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="color: #8A93A0; font-size: 13px">Messageries</span><span style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap"><a href="https://wa.me/33768580000" style="font-weight: 600">WhatsApp · assistance 24/7</a><a href="tel:+33768580000" style="font-weight: 600; color: #FFFFFF; display: inline-flex; align-items: center; gap: 8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Appeler</a></span></div></div>
+</div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; color: #5E6773; border-top: 1px solid #1A1F27; padding-top: 24px"><span>© 2026 Drivio</span><button onClick="{{openMentions}}" style="padding: 0; border: none; background: transparent; color: #8A93A0; font-family: Manrope, sans-serif; font-size: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-align: left">Mentions légales</button></div>
+<sc-if value="{{legalOpen}}" hint-placeholder-val="{{ false }}">
+<div id="mentions-legales" style="display: flex; flex-direction: column; gap: 24px; padding: 32px; border-radius: 24px; background: #0A0C0F; border: 1px solid #1D232C; scroll-margin-top: 24px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px"><span style="font-family: Unbounded, sans-serif; font-size: 26px; color: #FFFFFF">{{legalTitle}}</span><button onClick="{{closeLegal}}" aria-label="Fermer" style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; border: 1px solid #2A313C; background: #111419; color: #FFFFFF; cursor: pointer; font-size: 14px">✕</button></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 48px">
+<sc-for list="{{legalItems}}" as="li" hint-placeholder-count="4"><div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 17px; font-weight: 700; color: #FFFFFF">{{li.h}}</span><span style="font-size: 15px; line-height: 1.6; color: #A9B1BC">{{li.t}}</span></div></sc-for>
+</div>
+<span style="font-size: 12px; color: #5E6773">Dernière mise à jour : [DATE]</span>
+</div>
+</sc-if>
+</footer>
+</div>
+</template>
+<template id="tpl-mob">
+
+<div style="width: 390px;  background: #0A0C0F; display: flex; flex-direction: column; overflow: hidden; position: relative">
+
+
+<div style="padding: 14px 16px 4px; flex-shrink: 0">
+<div class="topbar promo" style="min-height: 52px; padding: 8px 10px 8px 12px; display: flex; align-items: center; gap: 12px; border-radius: 999px; font-size: 13px; color: #E6EAEF"><span style="padding: 5px 13px; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-size: 10px; font-weight: 800; letter-spacing: 1px; line-height: 1.2; flex-shrink: 0">NOUVEAU</span><a href="https://driviovtc.fr" style="flex-grow: 1; color: #E6EAEF; text-decoration: none; line-height: 1.3; width: 195px; height: 38px">Chauffeur VTC ? <br>L’app <b style="color: rgb(212, 255, 58)">Drivio VTC</b></a><span style="display: flex; gap: 6px; flex-shrink: 0"><a class="minibadge" href="https://apps.apple.com/us/app/drivio-vtc/id6766359221" aria-label="Drivio VTC sur l’App Store" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid #3A414C; display: flex; align-items: center; justify-content: center; background: #000000"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFFFFF" d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-2.99-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 2.99.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.67zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"></path></svg></a><a class="minibadge" href="https://play.google.com/store/apps/details?id=com.drivio.mobile" aria-label="Drivio VTC sur Google Play" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid #3A414C; display: flex; align-items: center; justify-content: center; background: #000000"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 2.3c-.2.2-.3.6-.3 1v17.4c0 .4.1.8.3 1l.1.1L13.4 12v-.2L3.7 2.2z"></path><path fill="#FFCE00" d="M16.6 15.3l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2z"></path><path fill="#FF3A44" d="M16.7 15.2L13.4 12l-9.8 9.7c.4.4.9.4 1.6.1l11.5-6.6"></path><path fill="#00F076" d="M16.7 8.8L5.2 2.2c-.7-.4-1.2-.3-1.6.1l9.8 9.7z"></path></svg></a></span></div>
+</div>
+<header style="height: 64px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1A1F27; flex-shrink: 0">
+<a href="#top" class="logo" style="font-size: 22px; gap: 0px">DRIVIO<span style="color: rgb(212, 255, 58)">CARS</span>.FR</a>
+<button aria-label="Ouvrir le menu" style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid #262D37; background: #111419; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"></path></svg></button>
+</header>
+
+<section id="top" style="padding: 28px 20px 32px; display: flex; flex-direction: column; gap: 18px; flex-shrink: 0">
+<div class="rise" style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; color: #B7BEC8; letter-spacing: 1.5px; text-transform: uppercase"><span style="width: 24px; height: 2px; background: {{accent}}"></span>Location VTC</div>
+<h1 class="rise" style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 34px; line-height: 1.1; letter-spacing: -0.8px; color: #FFFFFF; animation-delay: .1s">Votre voiture de&nbsp;travail vous attend au&nbsp;garage</h1>
+<p class="rise" style="margin: 0; font-size: 16px; line-height: 1.55; color: #A9B1BC; animation-delay: .2s">Drivio — des voitures pour travailler sur Uber, Bolt et Heetch ainsi que les autres plateformes. Sans caution, assurances comprises: choisissez une voiture disponible en ligne et démarrez en 10 minutes.</p>
+
+<div class="rise" style="position: relative; height: 250px; margin: 0 -20px; animation-delay: .15s">
+<img class="heroimg" src="img/03b544793ba164dadfa2188ccc04a0e9.webp" alt="Garage Drivio : voitures garées, une Toyota Camry noire sort par la porte ouverte" style="position: absolute; left: -10px; top: 14px; width: 420px; height: auto; display: block">
+<div class="floaty" style="position: absolute; right: 16px; top: 0; padding: 10px 14px; border-radius: 14px; background: rgba(18,21,26,.9); border: 1px solid #262D37; display: flex; align-items: center; gap: 10px">
+<span style="position: relative; width: 8px; height: 8px"><span class="pulse" style="position: absolute; inset: 0; border-radius: 50%; background: {{accent}}"></span><span style="position: absolute; inset: 0; border-radius: 50%; background: {{accent}}"></span></span>
+<span style="font-size: 13px; font-weight: 700; color: #FFFFFF">Démarrage en 10 min</span>
+</div>
+</div>
+
+<div class="rise" style="display: flex; flex-direction: column; gap: 10px; animation-delay: .3s">
+<a class="btn" href="#fleet" style="height: 54px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-weight: 700; font-size: 16px">Voir la flotte
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<div style="display: flex; gap: 10px">
+<a class="btn" href="https://wa.me/33768580000" style="height: 52px; flex: 1 1 0; min-width: 0; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; border: 1.5px solid #2E3540; color: #FFFFFF; font-weight: 600; font-size: 15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"></path></svg>WhatsApp</a>
+<a class="btn" href="tel:+33768580000" style="height: 52px; flex: 1 1 0; min-width: 0; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; border: 1.5px solid #2E3540; color: #FFFFFF; font-weight: 600; font-size: 15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Appeler</a>
+</div>
+</div>
+<div class="rise" style="display: flex; flex-direction: column; border-radius: 18px; border: 1px solid #1D232C; background: #0D1014; overflow: hidden; animation-delay: .4s">
+<sc-for list="{{perks}}" as="k" hint-placeholder-count="3">
+<div style="padding: 13px 16px; display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 12px; row-gap: 1px; align-items: center; border-bottom: 1px solid #1D232C">
+<span style="grid-row: span 2; font-family: Unbounded, sans-serif; font-size: 17px; color: {{accent}}; white-space: nowrap">{{k.big}}</span>
+<span style="font-size: 14px; font-weight: 700; color: #FFFFFF">{{k.title}}</span>
+<span style="font-size: 12px; line-height: 1.4; color: #8A93A0">{{k.text}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="padding: 0 20px 36px; flex-shrink: 0">
+<a href="#partners" class="recruit" style="position: relative; display: flex; flex-direction: column; border-radius: 24px; background: #0D1014; border: 1px solid #262D37; overflow: hidden; text-decoration: none">
+<div style="position: absolute; right: -80px; top: -100px; width: 260px; height: 260px; border-radius: 50%; background: #D4FF3A; opacity: .07; filter: blur(50px); pointer-events: none"></div>
+<img src="img/a8587ff5f90d48f22315f4d72530309b.webp" alt="Poignée de main devant le garage Drivio" class="fade-edges" style="width: 348px; height: 190px; object-fit: cover; display: block">
+<div style="padding: 0 20px 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Recrutement · chauffeurs VTC</span>
+<span style="font-family: Unbounded, sans-serif; font-size: 22px; line-height: 1.18; letter-spacing: -0.4px; color: #FFFFFF">Chauffeur VTC&nbsp;? Travaillez avec&nbsp;Drivio</span>
+<span style="font-size: 14px; line-height: 1.5; color: #A9B1BC">Statut salarié, liberté d’indépendant — rejoignez nos chauffeurs et nos partenaires.</span>
+<span class="btn" style="margin-top: 6px; height: 52px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-weight: 700; font-size: 15px">En savoir plus<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</div>
+</a>
+</section>
+
+<section id="how" style="padding: 44px 20px; display: flex; flex-direction: column; gap: 28px; flex-shrink: 0; border-top: 1px solid #151A21">
+<div class="rv" style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Comment ça marche</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 28px; line-height: 1.15; letter-spacing: -0.5px; color: #FFFFFF">Trois étapes de&nbsp;la demande à&nbsp;la première course</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A9B1BC">Pas de file d’attente en agence : vous réservez la voiture en ligne et récupérez les clés directement au garage.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="3">
+<div class="rv" style="padding: 22px; border-radius: 20px; background: #111419; border: 1px solid #1D232C; display: flex; gap: 16px; align-items: flex-start">
+<span style="font-family: Unbounded, sans-serif; font-size: 13px; color: #0A0C0F; background: {{accent}}; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0">{{s.n}}</span>
+<div style="display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #FFFFFF">{{s.title}}</h3><p style="margin: 0; font-size: 14px; line-height: 1.55; color: #A9B1BC">{{s.text}}</p></div>
+</div>
+</sc-for>
+<div class="rv" style="padding: 22px; border-radius: 20px; background: #D4FF3A; color: #0A0C0F; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700">Documents requis</h3>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">
+<span>— Passeport ou carte d’identité</span>
+<span>— Carte VTC</span>
+<span>— Permis de conduire</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="fleet" style="position: relative; padding: 56px 20px; display: flex; flex-direction: column; gap: 24px; flex-shrink: 0; background: #0D1014; border-top: 1px solid #151A21; border-bottom: 1px solid #151A21">
+<div class="rv" style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Flotte disponible</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 28px; line-height: 1.15; letter-spacing: -0.5px; color: #FFFFFF">Choisissez une voiture disponible</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A9B1BC">{{total}} modèles — électriques et hybrides, plus le van premium Mercedes Classe V. Touchez une voiture pour voir son prix à la journée et à la semaine.</p>
+</div>
+<div class="chips" style="display: flex; gap: 8px; overflow-x: auto; margin: 0 -20px; padding: 0 20px">
+<sc-for list="{{chips}}" as="c" hint-placeholder-count="5">
+<button onClick="{{c.pick}}" style="height: 44px; padding: 0 18px; border-radius: 999px; font-family: Manrope, sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; flex-shrink: 0; background: {{c.bg}}; color: {{c.fg}}; border: 1.5px solid {{c.bd}}">{{c.label}}</button>
+</sc-for>
+</div>
+
+<div class="rv" style="position: relative; width: 350px; height: 736px; border-radius: 20px; border: 1px solid #1D232C; overflow: hidden; background: #0B0E12">
+<img src="img/e714ffca363321b28f616c0fd64bd455.webp" alt="Parking Drivio vu du dessus : 23 voitures regroupées par marque" style="position: absolute; inset: 0; width: 350px; height: 736px; display: block">
+<sc-for list="{{leftCol}}" as="b" hint-placeholder-count="12">
+<button class="spot" onClick="{{b.pick}}" aria-label="{{b.aria}}" style="position: absolute; {{b.pos}}; padding: 0; margin: 0; border: none; border-radius: 6px; cursor: pointer; background: transparent; box-shadow: {{b.ring}}">
+<span class="lit" style="position: absolute; inset: 3px; border-radius: 6px; -webkit-backdrop-filter: brightness(1.6) saturate(1.1); backdrop-filter: brightness(1.6) saturate(1.1); opacity: {{b.lit}}; transition: opacity .35s; animation: {{b.anim}}; pointer-events: none"></span><span style="position: absolute; inset: 0; border-radius: 6px; background: #0A0C0F; opacity: {{b.dim}}; transition: opacity .3s; pointer-events: none"></span>
+</button>
+</sc-for>
+<sc-for list="{{rightCol}}" as="b" hint-placeholder-count="12">
+<button class="spot" onClick="{{b.pick}}" aria-label="{{b.aria}}" style="position: absolute; {{b.pos}}; padding: 0; margin: 0; border: none; border-radius: 6px; cursor: pointer; background: transparent; box-shadow: {{b.ring}}">
+<span class="lit" style="position: absolute; inset: 3px; border-radius: 6px; -webkit-backdrop-filter: brightness(1.6) saturate(1.1); backdrop-filter: brightness(1.6) saturate(1.1); opacity: {{b.lit}}; transition: opacity .35s; animation: {{b.anim}}; pointer-events: none"></span><span style="position: absolute; inset: 0; border-radius: 6px; background: #0A0C0F; opacity: {{b.dim}}; transition: opacity .3s; pointer-events: none"></span>
+</button>
+</sc-for>
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="7">
+<div class="grp" role="button" aria-label="{{g.aria}}" onClick="{{g.pick}}" style="position: absolute; cursor: pointer; transition: opacity .35s ease, color .35s ease, filter .35s ease; {{g.box}}; color: {{g.col}}; opacity: {{g.op}}; filter: {{g.fx}}; animation: {{g.anim}}">
+<span style="position: absolute; top: 0px; left: 0px; width: 2.5px; height: 100%; background: currentColor; border-radius: 1px"></span><span style="position: absolute; top: 0px; right: 0px; width: 2.5px; height: 100%; background: currentColor; border-radius: 1px"></span>
+<div style="position: absolute; left: 0px; right: 0px; height: 0px; display: flex; align-items: center; gap: 8px; {{g.rowPos}}"><span style="display: block; flex: 1 1 0%; min-width: 0px; height: 2.5px; background: currentColor; border-radius: 1px"></span><b style="font-family: 'Barlow Condensed', Manrope, sans-serif; font-weight: 800; text-transform: uppercase; line-height: 1; white-space: nowrap; font-size: 12px; letter-spacing: 1.5px; padding-left: 1.5px; {{g.txt}}">{{g.name}}</b><span style="display: block; flex: 1 1 0%; min-width: 0px; height: 2.5px; background: currentColor; border-radius: 1px"></span></div>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{hasGroup}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: -8px; font-size: 13px; color: #A9B1BC"><span>Groupe <b style="color: {{accent}}">{{groupName}}</b> mis en avant</span><button onClick="{{clearGroup}}" style="height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid #2E3540; background: transparent; color: #D5DAE0; font-family: Manrope, sans-serif; font-size: 12px; font-weight: 700; cursor: pointer">Tout afficher</button></div>
+</sc-if>
+
+<div data-pv-anchor="1" style="height: 226px; flex-shrink: 0; overflow: hidden; scroll-margin-top: 24px">
+<sc-if value="{{hasPreview}}" hint-placeholder-val="{{ false }}">
+<div class="rise" onTouchStart="{{holdPreview}}" style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: baseline; justify-content: center; gap: 10px; position: relative"><span style="font-family: 'Barlow Condensed', Manrope, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 3px; text-transform: uppercase; color: #D4FF3A">{{previewTitle}}</span><span style="font-size: 13px; color: #8A93A0">{{previewCount}}</span></div>
+<div data-pstrip="1" style="position: relative; display: flex; overflow-x: auto; margin: 0 -20px; padding: 2px 20px 6px; scrollbar-width: none">
+<div style="display: flex; gap: 14px; margin: 0 auto">
+<sc-for list="{{preview}}" as="p" hint-placeholder-count="3">
+<button class="pthumb" data-pcur="{{p.curFlag}}" onClick="{{p.pick}}" aria-label="{{p.model}}" style="width: 104px; flex-shrink: 0; padding: 0; margin: 0; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; gap: 8px; text-align: left; font-family: Manrope, sans-serif">
+<span class="pimg" style="display: block; width: 104px; height: 104px; border-radius: 14px; overflow: hidden; border: 1.5px solid {{p.bd}}; box-shadow: {{p.glow}}; background: #111419"><img src="{{p.photo}}" alt="{{p.model}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></span>
+<span style="font-size: 13px; font-weight: 700; color: #FFFFFF; line-height: 1.25; height: 33px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical">{{p.model}}</span>
+<span style="font-size: 12px; color: #8A93A0; margin-top: -4px">{{p.price}}</span>
+</button>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+<div class="fleetmodal" style="position: absolute; inset: 0; z-index: 60; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 16px; box-sizing: border-box">
+<div onClick="{{close}}" aria-hidden="true" style="position: absolute; inset: 0; background: rgba(6,8,10,.78); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); cursor: pointer"></div>
+<div data-card-anchor="1" style="height: 0; scroll-margin-top: 12px"></div>
+<div class="modalcard" role="dialog" aria-modal="true" aria-label="{{sel.model}}" onTouchStart="{{tStart}}" onTouchEnd="{{tEnd}}" style="position: relative; width: 358px; border-radius: 24px; background: #0D1014; border: 1px solid #2A313C; box-shadow: 0 30px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(212,255,58,.08); overflow: hidden; display: flex; flex-direction: column; touch-action: pan-y">
+<button onClick="{{close}}" aria-label="Fermer la fiche" style="position: absolute; top: 12px; right: 12px; z-index: 2; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #2A313C; background: rgba(17,20,25,.85); cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<sc-if value="{{sel.hasPhoto}}" hint-placeholder-val="{{ true }}"><img src="{{sel.photo}}" alt="{{sel.model}}" style="width: 356px; height: 320px; object-fit: cover; display: block"></sc-if>
+<sc-if value="{{sel.noPhoto}}" hint-placeholder-val="{{ false }}"><div style="width: 356px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #5E6773; font-size: 14px; background: #111419"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#3A414C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l1.5-6h9L18 17M8 11l1-4h6l1 4"></path><circle cx="8" cy="17" r="1.5"></circle><circle cx="16" cy="17" r="1.5"></circle></svg>Photo à venir</div></sc-if>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 16px 0"><button class="navbtn" onClick="{{navPrev}}" aria-label="Voiture précédente" style="width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 1.5px solid #D4FF3A; background: #111419; box-shadow: 0 0 14px rgba(212,255,58,.18); cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button><div style="display: flex; flex-direction: column; align-items: center; gap: 2px"><span style="font-size: 13px; font-weight: 700; color: #D5DAE0; letter-spacing: 1px">{{navPos}}</span><span style="font-size: 11px; color: #5E6773">Glissez pour changer</span></div><button class="navbtn" onClick="{{navNext}}" aria-label="Voiture suivante" style="width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 1.5px solid #D4FF3A; background: #111419; box-shadow: 0 0 14px rgba(212,255,58,.18); cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button></div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">{{sel.cls}} · place {{sel.slot}}</span><span style="font-family: Unbounded, sans-serif; font-size: 24px; line-height: 1.15; color: #FFFFFF">{{sel.model}}</span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div style="padding: 12px; border-radius: 14px; background: #111419; border: 1px solid #1D232C; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #8A93A0">Jour</span><span style="font-size: 14px; white-space: nowrap; font-weight: 800; color: #FFFFFF">{{sel.dayLabel}}</span></div>
+<div style="padding: 12px; border-radius: 14px; background: rgba(212,255,58,.07); border: 1px solid rgba(212,255,58,.3); display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #A9B1BC">Semaine</span><span style="font-size: 14px; white-space: nowrap; font-weight: 800; color: #D4FF3A">{{sel.weekLabel}}</span></div>
+<div style="padding: 12px; border-radius: 14px; background: #111419; border: 1px solid #1D232C; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #8A93A0">Mois</span><span style="font-size: 14px; white-space: nowrap; letter-spacing: -0.2px; font-weight: 700; color: #A9B1BC">{{sel.month}}</span></div>
+</div>
+<div style="display: flex; flex-direction: column">
+<sc-for list="{{sel.specs}}" as="r" hint-placeholder-count="8">
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid #1D232C; font-size: 14px"><span style="color: #8A93A0">{{r.k}}</span><span style="color: #FFFFFF; font-weight: 700; text-align: right">{{r.v}}</span></div>
+</sc-for>
+</div>
+<a class="btn" href="{{sel.wa}}" style="height: 54px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-weight: 700; font-size: 16px">Réserver sur WhatsApp</a>
+<a class="btn" href="tel:+33768580000" style="height: 54px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; border: 1.5px solid #2E3540; color: #FFFFFF; font-weight: 600; font-size: 16px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Appeler</a>
+<span style="font-size: 12px; color: #5E6773; text-align: center">Sans caution · tout compris · données constructeur (WLTP) indicatives</span>
+</div>
+</div>
+</div>
+</sc-if>
+</section>
+
+<section id="partners" style="padding: 56px 20px; display: flex; flex-direction: column; gap: 24px; flex-shrink: 0">
+<div class="rv" style="height: 350px; display: flex; justify-content: center">
+<img src="img/a8587ff5f90d48f22315f4d72530309b.webp" alt="Deux partenaires se serrent la main devant le garage Drivio" class="fade-edges" style="width: 350px; height: 350px; object-fit: cover; display: block">
+</div>
+<div class="rv" style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Nos offres</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 28px; line-height: 1.15; letter-spacing: -0.5px; color: #FFFFFF">Trois offres pour votre avenir de&nbsp;chauffeur</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A9B1BC">Louez votre véhicule, simplifiez votre activité ou préparez votre accès à la propriété. Choisissez le parcours qui vous correspond.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{partners}}" as="p" hint-placeholder-count="3">
+<div class="rv" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 16px; background: #111419; border: 1px solid #1D232C">
+<span style="width: 9px; height: 9px; margin-top: 6px; border-radius: 3px; background: {{accent}}; flex-shrink: 0"></span>
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 700; color: #FFFFFF">{{p.title}}</span><span style="font-size: 14px; line-height: 1.5; color: #A9B1BC">{{p.text}}</span></div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<a class="btn" href="https://wa.me/33768580000?text=Bonjour%2C%20je%20souhaite%20d%C3%A9couvrir%20les%20offres%20Drivio%20%28Flexible%2C%20Coop%C3%A9rative%2C%20Propri%C3%A9t%C3%A9%29." style="height: 56px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: {{accent}}; color: #0A0C0F; font-weight: 700; font-size: 16px">Découvrir les offres</a>
+<a class="btn" href="tel:+33768580000" style="height: 56px; display: flex; align-items: center; gap: 10px; justify-content: center; border-radius: 999px; border: 1.5px solid #2E3540; color: #FFFFFF; font-weight: 600; font-size: 16px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Parler à un conseiller</a>
+</div>
+</section>
+
+<section id="app" style="padding: 0 20px 56px; flex-shrink: 0">
+<div style="position: relative; display: flex; flex-direction: column; gap: 22px; padding: 26px 22px; border-radius: 24px; background: #0F130A; border: 1px solid #2A3312; overflow: hidden">
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Drivio VTC · l’app chauffeur</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 26px; line-height: 1.15; color: #FFFFFF">Travaillez librement, gagnez mieux</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #A9B1BC">Devenez entrepreneur-salarié : les avantages d’un salarié, la liberté d’un indépendant.</p></div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 28px; height: 28px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 700; color: #FFFFFF">Statut entrepreneur-salarié</span><span style="font-size: 13px; line-height: 1.5; color: #A9B1BC">Les avantages d’un salarié, la liberté d’un indépendant.</span></div></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 28px; height: 28px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 700; color: #FFFFFF">5+ plateformes en même temps</span><span style="font-size: 13px; line-height: 1.5; color: #A9B1BC">Uber, Bolt, Heetch, FreeNow — depuis une seule app.</span></div></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 28px; height: 28px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 700; color: #FFFFFF">Revenus en temps réel</span><span style="font-size: 13px; line-height: 1.5; color: #A9B1BC">Salaire fixe + primes, suivis au jour le jour.</span></div></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 28px; height: 28px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0C0F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 700; color: #FFFFFF">Gestion simplifiée</span><span style="font-size: 13px; line-height: 1.5; color: #A9B1BC">Frais et absences déclarés directement dans l’app.</span></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<a class="store" href="https://apps.apple.com/us/app/drivio-vtc/id6766359221" aria-label="Télécharger dans App Store" style="height: 54px; padding: 0 18px 0 12px; display: flex; justify-content: center; align-items: center; gap: 10px; border-radius: 12px; border: 1px solid #5E6773; background: #000000; color: #FFFFFF; text-decoration: none"><svg width="27" height="27" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFFFFF" d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-2.99-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 2.99.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.67zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"></path></svg><span style="display: flex; flex-direction: column; line-height: 1.05"><span style="font-size: 10px; color: #D5DAE0">Télécharger dans</span><span style="font-size: 19px; font-weight: 600; letter-spacing: -0.3px">App Store</span></span></a>
+<a class="store" href="https://play.google.com/store/apps/details?id=com.drivio.mobile" aria-label="Disponible sur Google Play" style="height: 54px; padding: 0 18px 0 12px; display: flex; justify-content: center; align-items: center; gap: 10px; border-radius: 12px; border: 1px solid #5E6773; background: #000000; color: #FFFFFF; text-decoration: none"><svg width="27" height="27" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 2.3c-.2.2-.3.6-.3 1v17.4c0 .4.1.8.3 1l.1.1L13.4 12v-.2L3.7 2.2z"></path><path fill="#FFCE00" d="M16.6 15.3l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2z"></path><path fill="#FF3A44" d="M16.7 15.2L13.4 12l-9.8 9.7c.4.4.9.4 1.6.1l11.5-6.6"></path><path fill="#00F076" d="M16.7 8.8L5.2 2.2c-.7-.4-1.2-.3-1.6.1l9.8 9.7z"></path></svg><span style="display: flex; flex-direction: column; line-height: 1.05"><span style="font-size: 10px; color: #D5DAE0">Disponible sur</span><span style="font-size: 19px; font-weight: 600; letter-spacing: -0.3px">Google Play</span></span></a>
+</div>
+<a href="https://driviovtc.fr" style="text-align: center; font-weight: 700; font-size: 15px">driviovtc.fr →</a>
+</div>
+</section>
+<footer id="contacts" style="flex-grow: 1; padding: 44px 20px; background: #0D1014; border-top: 1px solid #151A21; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span class="logo" style="font-size: 22px; gap: 0px">DRIVIO<span style="color: rgb(212, 255, 58)">CARS</span>.FR</span>
+<span style="font-size: 14px; color: #8A93A0">Location de voitures pour chauffeurs VTC et taxi.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px; font-size: 15px">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="color: #8A93A0; font-size: 13px">Téléphone</span><a href="tel:+33768580000" style="color: #FFFFFF; font-weight: 600; text-decoration: none">+33 7 68 58 00 00</a></div><div style="display: flex; flex-direction: column; gap: 4px"><span style="color: #8A93A0; font-size: 13px">E-mail</span><a href="mailto:drivio.cars@gmail.com" style="color: #FFFFFF; font-weight: 600; text-decoration: none">drivio.cars@gmail.com</a></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="color: #8A93A0; font-size: 13px">Messageries</span><span style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap"><a href="https://wa.me/33768580000" style="font-weight: 600">WhatsApp · assistance 24/7</a><a href="tel:+33768580000" style="font-weight: 600; color: #FFFFFF; display: inline-flex; align-items: center; gap: 8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Appeler</a></span></div></div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #5E6773; border-top: 1px solid #1A1F27; padding-top: 18px"><span>© 2026 Drivio</span><button onClick="{{openMentions}}" style="padding: 0; border: none; background: transparent; color: #8A93A0; font-family: Manrope, sans-serif; font-size: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-align: left">Mentions légales</button></div>
+<sc-if value="{{legalOpen}}" hint-placeholder-val="{{ false }}">
+<div id="mentions-legales" style="display: flex; flex-direction: column; gap: 18px; padding: 20px; border-radius: 18px; background: #0A0C0F; border: 1px solid #1D232C; scroll-margin-top: 24px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px"><span style="font-family: Unbounded, sans-serif; font-size: 20px; color: #FFFFFF">{{legalTitle}}</span><button onClick="{{closeLegal}}" aria-label="Fermer" style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; border: 1px solid #2A313C; background: #111419; color: #FFFFFF; cursor: pointer; font-size: 14px">✕</button></div>
+<div style="display: grid; grid-template-columns: 1fr; gap: 18px 0px">
+<sc-for list="{{legalItems}}" as="li" hint-placeholder-count="4"><div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 15px; font-weight: 700; color: #FFFFFF">{{li.h}}</span><span style="font-size: 13px; line-height: 1.6; color: #A9B1BC">{{li.t}}</span></div></sc-for>
+</div>
+<span style="font-size: 12px; color: #5E6773">Dernière mise à jour : [DATE]</span>
+</div>
+</sc-if>
+</footer>
+</div>
+</template>
+<script type="text/plain" id="js-desk">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props); this.state = { hover: null, sel: 1, filter: 'Tous', tour: 0 };
+    this._tour = setInterval(() => { const s = this.state || {}; if (!s.hover && !s.hg && !s.pin && !s.open && !s.hold) this.setState({ tour: (s.tour || 0) + 1 }); }, 1800);
+    if (typeof window !== 'undefined' && !window.__drivioKeys) {
+      window.__drivioKeys = true;
+      window.addEventListener('keydown', (e) => {
+        const t = e.target && e.target.tagName;
+        if (t === 'INPUT' || t === 'TEXTAREA' || (e.target && e.target.isContentEditable)) return;
+        const k = window.__drivioNav; if (!k || !k.open) return;
+        if (e.key === 'ArrowLeft') { e.preventDefault(); k.prev(); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); k.next(); }
+        else if (e.key === 'Escape') { k.close(); }
+      });
+    }
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#D4FF3A';
+    const K = '#1F242B', R = '#3A414C', G = '#4A5361', B = '#233F73';
+    const cars = [
+      { id: 20, model: 'BYD Atto 2 DM-i', cls: 'Hybride', qty: null, day: 58, week: 400, color: K },
+      { id: 1, model: 'BYD Seal', cls: 'Électrique', qty: 7, day: 69, week: 480, color: K },
+      { id: 21, model: 'BYD Sealion 7', cls: 'Électrique', qty: null, day: 72, week: 500, color: K },
+      { id: 2, model: 'Hyundai Kona', cls: 'Hybride', qty: 10, day: 55, week: 380, color: R },
+      { id: 3, model: 'Hyundai Kona Electric', cls: 'Électrique', qty: 7, day: 58, week: 400, color: B },
+      { id: 22, model: 'Hyundai Tucson Hybrid', cls: 'Hybride', qty: null, day: 58, week: 400, color: K },
+      { id: 4, model: 'Kia EV3', cls: 'Électrique', qty: 10, day: 57, week: 400, color: G },
+      { id: 5, model: 'Kia EV6', cls: 'Électrique', qty: 2, day: 62, week: 430, color: K },
+      { id: 6, model: 'Kia Niro', cls: 'Hybride', qty: 1, day: 43, week: 300, color: R },
+      { id: 8, model: 'Suzuki Swace', cls: 'Hybride', qty: 8, day: 50, week: 350, color: G },
+      { id: 19, model: 'Suzuki Vitara', cls: 'Hybride', qty: 2, day: 50, week: 350, color: B },
+      { id: 9, model: 'Tesla Model 3', cls: 'Électrique', qty: 3, day: 65, week: 450, color: K },
+      { id: 10, model: 'Tesla Model Y', cls: 'Électrique', qty: 5, day: 69, week: 480, color: K },
+      { id: 7, model: 'Lexus UX 250h', cls: 'Hybride', qty: 7, day: 57, week: 400, color: K },
+      { id: 11, model: 'Toyota Auris', cls: 'Hybride', qty: 1, day: 43, week: 300, color: G },
+      { id: 12, model: 'Toyota bZ4X', cls: 'Électrique', qty: 2, day: 57, week: 400, color: R },
+      { id: 25, model: 'Toyota CHR', cls: 'Hybride', qty: null, day: 46, week: 320, color: G },
+      { id: 13, model: 'Toyota CHR - HEV', cls: 'Hybride', qty: 27, day: 53, week: 370, color: K },
+      { id: 14, model: 'Toyota Camry', cls: 'Hybride', qty: 1, day: 57, week: 400, color: K },
+      { id: 16, model: 'Toyota Corolla Touring', cls: 'Hybride', qty: 1, day: 52, week: 360, color: R },
+      { id: 17, model: 'Toyota Prius', cls: 'Hybride', qty: 1, day: 36, week: 250, color: K },
+      { id: 18, model: 'Toyota RAV4', cls: 'Hybride', qty: 1, day: 54, week: 380, color: G },
+      { id: 24, model: 'Mercedes V-Class', cls: 'Premium', qty: null, day: 108, week: 750, color: K }
+    ];
+    const eur = (v, suf) => v ? 'dès ' + v + ' €' + (suf || '') : 'Prix à venir';
+    const SPECS = {
+      'BYD Atto 2 DM-i': { hp: '212 ch', conso: '≈ 1,8 L/100 km (WLTP)', range: 'jusqu’à 90 km en électrique', nrg: 'Hybride rechargeable', photo: 'img/0935266956d4ff860d845eefabd000cf.webp' },
+      'BYD Sealion 7': { hp: '313 ch', conso: '≈ 18 kWh/100 km', range: 'jusqu’à 480 km', photo: 'img/f05c97ac4dcf7d143c2d20b67adfdcc1.webp' },
+      'Hyundai Tucson Hybrid': { range: '≈ 930 km avec un plein', hp: '215 ch', conso: '≈ 5,6 L/100 km', photo: 'img/c4aa88bacf5cf7c6539de597d3ba1257.webp' },
+      'Toyota Corolla Berline': { range: '≈ 950 km avec un plein', hp: '140 ch', conso: '≈ 4,5 L/100 km', photo: 'img/a3421077e90b6266429061a51701312c.webp' },
+      'BYD Seal': { hp: '313 ch', conso: '≈ 16,6 kWh/100 km', range: 'jusqu’à 570 km', photo: 'img/52b7fd79f2f938446aa5ce554c9e4fb7.webp' },
+      'Hyundai Kona': { range: '≈ 840 km avec un plein', hp: '141 ch', conso: '≈ 4,5 L/100 km', photo: 'img/c39aa2d147cf025aaa566da8335874b6.webp' },
+      'Hyundai Kona Electric': { hp: '218 ch', conso: '≈ 14,7 kWh/100 km', range: 'jusqu’à 514 km', photo: 'img/62d7554f675cbe71848e3bb3effce383.webp' },
+      'Kia EV3': { hp: '204 ch', conso: '≈ 14,9 kWh/100 km', range: 'jusqu’à 605 km', photo: 'img/a44ca4d794e5b55d13c7862febdcc98d.webp' },
+      'Kia EV6': { hp: '229 ch', conso: '≈ 16,5 kWh/100 km', range: 'jusqu’à 528 km', photo: 'img/4876c68422e2b45f1afa4263a814a3db.webp' },
+      'Kia Niro': { range: '≈ 950 km avec un plein', hp: '141 ch', conso: '≈ 4,4 L/100 km', photo: 'img/2dc0f81e0553832283c74e6ab2fffd3b.webp' },
+      'Lexus UX 250h': { range: '≈ 830 km avec un plein', hp: '184 ch', conso: '≈ 5,2 L/100 km', photo: 'img/15dd7aaae46edef399b4acd4d77e3ea3.webp' },
+      'Suzuki Swace': { range: '≈ 950 km avec un plein', hp: '122 ch', conso: '≈ 4,5 L/100 km', photo: 'img/6f07eeff6639507a89e46957466708d0.webp' },
+      'Suzuki Vitara': { range: '≈ 840 km avec un plein', hp: '129 ch', conso: '≈ 5,6 L/100 km', photo: 'img/f621a6c774133160f384aefe6e69cbfd.webp' },
+      'Tesla Model 3': { hp: '283 ch', conso: '≈ 13,2 kWh/100 km', range: 'jusqu’à 554 km', photo: 'img/78462a958ec435c524fa0b3848e51cd7.webp' },
+      'Tesla Model Y': { hp: '299 ch', conso: '≈ 15,0 kWh/100 km', range: 'jusqu’à 500 km', photo: 'img/0d13550b1dd03c05ab8b2874861ab1a0.webp' },
+      'Toyota Auris': { range: '≈ 1 000 km avec un plein', hp: '136 ch', conso: '≈ 4,5 L/100 km', photo: 'img/c31874ccb516e33c39fca4c300069639.webp' },
+      'Toyota bZ4X': { hp: '204 ch', conso: '≈ 14,4 kWh/100 km', range: 'jusqu’à 513 km', photo: 'img/4c159a28ec784c87223db8f05ef22c0e.webp' },
+      'Toyota CHR': { range: '≈ 860 km avec un plein', hp: '122 ch', conso: '≈ 5,0 L/100 km', photo: 'img/3674f5d6019c5a51e73347eea5d5ca08.webp' },
+      'Toyota CHR - HEV': { range: '≈ 890 km avec un plein', hp: '140 ch', conso: '≈ 4,8 L/100 km', photo: 'img/3111b07206217a3e50982cf5d218b058.webp' },
+      'Toyota Camry': { range: '≈ 920 km avec un plein', hp: '218 ch', conso: '≈ 5,4 L/100 km', photo: 'img/aabb18b22a8354109f6f2427d17197fa.webp' },
+      'Toyota Corolla': { range: '≈ 930 km avec un plein', hp: '140 ch', conso: '≈ 4,6 L/100 km', photo: 'img/66af80fe6f52aeb3cdb62d813c68a116.webp' },
+      'Toyota Corolla Touring': { range: '≈ 910 km avec un plein', hp: '140 ch', conso: '≈ 4,7 L/100 km', photo: 'img/cfd6d5936e4dff9a7afb60fe33e84741.webp' },
+      'Toyota Prius': { range: '≈ 1 070 km avec un plein', hp: '122 ch', conso: '≈ 4,0 L/100 km', photo: 'img/6423ebfefb955830b7b66068fbbc676b.webp' },
+      'Mercedes V-Class': { range: '≈ 770 km avec un plein', hp: '190 ch', conso: '≈ 7,4 L/100 km (WLTP)', nrg: 'Diesel', places: '7 – 8', photo: 'img/5ee9a88ecb4dbdd1247e02126f254888.webp' },
+      'Toyota RAV4': { range: '≈ 980 km avec un plein', hp: '218 ch', conso: '≈ 5,6 L/100 km', photo: 'img/162651cf4e1bd8e5673180394f120be7.webp' }
+    };
+    const fiche = (c) => {
+      const sp = SPECS[c.model] || {};
+      const ev = c.cls === 'Électrique';
+      return {
+        photo: sp.photo || '',
+        hasPhoto: !!sp.photo,
+        noPhoto: !sp.photo,
+        month: c.week ? 'dès ' + Math.round(c.week * 52 / 12) + ' €' : 'Prix à venir',
+        weekLabel: eur(c.week),
+        dayLabel: eur(c.day),
+        wa: 'https://wa.me/33768580000?text=' + encodeURIComponent('Bonjour, je suis intéressé par la ' + c.model + ' chez Drivio.'),
+        specs: [
+          { k: 'Consommation', v: sp.conso || '—' },
+          { k: 'Énergie', v: sp.nrg || (ev ? '100 % électrique' : 'Hybride essence') },
+          { k: 'Autonomie', v: sp.range || '—' },
+          { k: 'Usage', v: 'VTC · Taxi' }
+        ]
+      };
+    };
+    const f = this.state.filter;
+    const activeId = this.state.hover ?? this.state.sel;
+    const brandOf = (c) => c.model.split(' ')[0];
+    const hoverCar = cars.find((c) => c.id === this.state.hover);
+    const selCar = this.state.open ? cars.find((c) => c.id === this.state.sel) : null;
+    const BR = []; cars.forEach((c) => { const b = c.model.split(' ')[0]; if (!BR.includes(b)) BR.push(b); });
+    const auto = !this.state.hover && !this.state.hg && !this.state.pin && !this.state.open && !this.state.hold, STEP = 1.6, TOUR = (BR.length * STEP).toFixed(1);
+    const tourB = auto ? BR[(this.state.tour || 0) % BR.length] : null;
+    const pin = this.state.pin || null;
+    const hg = this.state.hg || pin || this.state.hold || tourB;
+    const selC = this.state.open ? cars.find((c) => c.id === this.state.sel) : null;
+    const pvBrand = hg || (selC ? selC.model.split(' ')[0] : null);
+    const preview = pvBrand ? cars.filter((c) => c.model.split(' ')[0] === pvBrand).map((c) => { const sp = SPECS[c.model] || {}; const cur = !!selC && selC.id === c.id; return { model: c.model, bd: cur ? '#D4FF3A' : '#2A313C', glow: cur ? '0 0 18px rgba(212,255,58,.35)' : 'none', photo: sp.photo || '', price: c.week ? 'dès ' + c.week + ' €/sem' : 'Prix à venir', pick: () => this.setState({ sel: c.id, open: true, hover: null }) }; }) : [];
+    const K0 = 1106 / 1480, TW = 119.64, BW = 109.83, NT = 11;
+    const tourAnim = () => 'none';
+    const decorate = (c, i) => {
+      const match = f === 'Tous' || c.cls === f;
+      const top = i < NT, j = top ? i : i - NT;
+      const bw = top ? TW : BW, x = (top ? 88 : 87) + j * bw;
+      const y = top ? 90 : 420, h = top ? 182 : 188;
+      const inG = hg === brandOf(c);
+      return {
+        ...c,
+        pos: 'left: ' + (x * K0).toFixed(1) + 'px; top: ' + (y * K0).toFixed(1) + 'px; width: ' + (bw * K0).toFixed(1) + 'px; height: ' + (h * K0).toFixed(1) + 'px',
+        tipPos: top ? 'top: calc(100% + 10px); transform: translateX(-50%)' : 'bottom: calc(100% + 10px); transform: translateX(-50%)',
+        dim: !match ? 0.72 : (hg && !inG ? (tourB && hg === tourB ? 0.35 : 0.55) : 0),
+        lit: inG && match ? 1 : 0,
+        anim: tourAnim('litTour', c.model.split(' ')[0]),
+        selOp: this.state.open && this.state.sel === c.id ? 1 : 0,
+        slot: (top ? 'A-' : 'B-') + String(j + 1).padStart(2, '0'),
+        price: c.week ? 'dès ' + c.week + ' €/sem' : 'Prix à venir',
+        dayPrice: eur(c.day),
+        gear: 'Boîte automatique',
+        fuel: c.cls,
+        op: match ? 1 : 0.12,
+        active: this.state.hover === c.id,
+        dot: c.cls === 'Électrique' ? '#3F7CFF' : '#7FA800',
+        status: c.day ? '≈ ' + c.day + ' €/jour' : 'bientôt',
+        statusColor: '#4A5361',
+        aria: c.model + ', ' + c.cls + ', ' + (c.week ? 'dès ' + c.week + ' euros par semaine' : 'prix à venir'),
+        enter: () => this.setState({ hover: c.id }),
+        pick: () => this.setState({ hover: null, sel: c.id, open: true })
+      };
+    };
+    const groups = [];
+    cars.forEach((c, i) => {
+      const top = i < NT, j = top ? i : i - NT, name = brandOf(c), last = groups[groups.length - 1];
+      if (last && last.name === name && last.top === top) { last.j1 = j; last.n++; } else groups.push({ name, top, j0: j, j1: j, n: 1, first: c });
+    });
+    const groupVals = groups.map((g) => {
+      const bw = g.top ? TW : BW, x0 = (g.top ? 88 : 87) + g.j0 * bw;
+      const pad = g.n === 1 ? 5 : 12;
+      const left = (x0 + pad) * K0, width = (g.n * bw - 2 * pad) * K0, H = 22;
+      const topPx = g.top ? 282 * K0 + 8 : 414 * K0 - 8 - H;
+      const solo = g.n === 1;
+      const on = hg === g.name || pin === g.name, warm = !on && ((hoverCar && brandOf(hoverCar) === g.name) || (selCar && brandOf(selCar) === g.name));
+      return {
+        name: ({ Mercedes: 'V-Class' })[g.name] || g.name,
+        anim: tourAnim('grpTour', g.name),
+        aria: 'Groupe ' + g.name + ' : ' + g.n + (g.n > 1 ? ' modèles' : ' modèle'),
+        box: 'left: ' + left.toFixed(1) + 'px; top: ' + topPx.toFixed(1) + 'px; width: ' + width.toFixed(1) + 'px; height: ' + H + 'px',
+        rowPos: (g.top ? 'bottom: 0' : 'top: 0') + (solo ? '; gap: 6px' : ''),
+        txt: solo ? ((({ Mercedes: 'V-Class' })[g.name] || g.name).length > 6 ? 'position: relative; font-size: 15px; letter-spacing: 1px; padding-left: 1px' : 'position: relative') : 'position: relative',
+        col: on ? accent : '#ECEEE6',
+        op: on ? 1 : warm ? 0.9 : 0.68,
+        fx: on ? 'drop-shadow(0 0 10px rgba(212,255,58,.55))' : 'none',
+        enter: () => this.setState({ hg: g.name }),
+        leave: () => this.setState({ hg: null }),
+        pick: () => this.setState({ pin: pin === g.name ? null : g.name, hg: pin === g.name ? null : g.name })
+      };
+    });
+    const all = cars.map(decorate);
+    const s = all.find((c) => c.id === activeId) || all[0];
+    const picked = all.find((c) => c.id === this.state.sel) || all[0];
+    const sel = { ...picked, ...fiche(picked) };
+    const navList = all.filter((c) => f === 'Tous' || c.cls === f);
+    const navArr = navList.length ? navList : all;
+    let navIdx = navArr.findIndex((c) => c.id === sel.id);
+    if (navIdx < 0) navIdx = 0;
+    const navN = navArr.length;
+    const prevC = navArr[(navIdx - 1 + navN) % navN], nextC = navArr[(navIdx + 1) % navN];
+    const goTo = (c) => this.setState({ sel: c.id, hover: null, open: true });
+    if (typeof window !== 'undefined') window.__drivioNav = { open: !!this.state.open, prev: () => goTo(prevC), next: () => goTo(nextC), close: () => this.setState({ open: false }) };
+    const LEGAL = {
+      mentions: { title: 'Mentions légales', items: [
+        { h: 'Éditeur du site', t: 'Le site driviocars.fr est édité par [RAISON SOCIALE], [FORME JURIDIQUE] au capital de [MONTANT] €, immatriculée au RCS de [VILLE] sous le numéro [SIREN], dont le siège social est situé [ADRESSE COMPLÈTE]. N° de TVA intracommunautaire : [NUMÉRO DE TVA]. Téléphone : +33 7 68 58 00 00 · E-mail : drivio.cars@gmail.com' },
+        { h: 'Directeur de la publication', t: '[PRÉNOM NOM], en qualité de [FONCTION].' },
+        { h: 'Hébergement', t: 'Le site est hébergé par [NOM DE L’HÉBERGEUR], [ADRESSE DE L’HÉBERGEUR], [TÉLÉPHONE DE L’HÉBERGEUR].' },
+        { h: 'Activité', t: 'Location de véhicules destinés aux chauffeurs VTC et taxi. Les offres, tarifs et disponibilités présentés sur le site sont indicatifs ; seules les conditions du contrat de location font foi. Les données techniques des véhicules (WLTP) sont fournies à titre indicatif.' },
+        { h: 'Propriété intellectuelle', t: 'Les contenus du site (textes, visuels, logo, mise en page) sont la propriété de [RAISON SOCIALE] ou utilisés avec autorisation. Toute reproduction sans accord préalable est interdite. Les marques des constructeurs citées appartiennent à leurs propriétaires. Certains visuels sont des illustrations générées par intelligence artificielle et ne représentent pas nécessairement les véhicules exacts de la flotte.' },
+        { h: 'Liens externes', t: 'Le site renvoie vers des services tiers (WhatsApp, App Store, Google Play, driviovtc.fr). [RAISON SOCIALE] n’est pas responsable de leur contenu.' }
+      ] },
+      privacy: { title: 'Politique de confidentialité', items: [
+        { h: 'Responsable du traitement', t: '[RAISON SOCIALE], [ADRESSE COMPLÈTE]. Contact pour toute question sur vos données : drivio.cars@gmail.com.' },
+        { h: 'Données collectées', t: 'Identité et coordonnées (nom, prénom, téléphone, e-mail, adresse) ; documents nécessaires à la location (pièce d’identité, permis de conduire, carte professionnelle VTC, justificatif de domicile) ; informations de paiement ; données liées au véhicule loué (kilométrage, sinistres, infractions) [et géolocalisation si le véhicule est équipé d’un boîtier — À CONFIRMER].' },
+        { h: 'Finalités et bases légales', t: 'Répondre à vos demandes (mesures précontractuelles) ; conclure et exécuter le contrat de location (exécution du contrat) ; respecter nos obligations comptables, fiscales et de désignation du conducteur (obligation légale) ; prévenir la fraude et protéger la flotte (intérêt légitime).' },
+        { h: 'Destinataires', t: 'Personnel habilité de [RAISON SOCIALE] ; assureur et experts en cas de sinistre ; prestataires techniques (hébergement, messagerie) ; autorités compétentes lorsque la loi l’exige (par exemple pour la désignation du conducteur). Vos données ne sont jamais vendues.' },
+        { h: 'Durée de conservation', t: 'Demandes sans suite : [3 ans] après le dernier contact. Clients : durée du contrat puis [5 ans] (prescription). Pièces comptables : 10 ans. Copies de documents d’identité : supprimées [à la fin du contrat / selon obligation légale].' },
+        { h: 'Vos droits', t: 'Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation, d’opposition et de portabilité. Écrivez à drivio.cars@gmail.com en précisant votre demande. Vous pouvez introduire une réclamation auprès de la CNIL (www.cnil.fr).' },
+        { h: 'Cookies', t: 'Les cookies strictement nécessaires au fonctionnement du site sont toujours actifs. Les cookies de préférences, de statistiques et de marketing ne sont déposés qu’avec votre consentement, que vous pouvez modifier à tout moment via le bandeau « Gérer le consentement ».' }
+      ] },
+      cgv: { title: 'CGV / CGU', items: [
+        { h: 'Objet', t: 'Les présentes conditions encadrent la location de véhicules par [RAISON SOCIALE] à des chauffeurs VTC et taxi, ainsi que l’utilisation du site driviocars.fr. Le contrat de location signé entre les parties prévaut en cas de contradiction.' },
+        { h: 'Conditions requises', t: 'Être titulaire d’un permis B depuis au moins [X] ans, d’une carte professionnelle VTC ou taxi en cours de validité, et fournir une pièce d’identité et un justificatif de domicile. Âge minimum : [X] ans.' },
+        { h: 'Tarifs et paiement', t: 'Les tarifs affichés sont exprimés en euros TTC, à la semaine, assurance et entretien inclus, sans dépôt de garantie. Le loyer est payable [d’avance, chaque semaine] par [MOYEN DE PAIEMENT]. Tout retard de paiement peut entraîner la suspension de la location.' },
+        { h: 'Kilométrage', t: '[X] km inclus par [semaine / mois]. Au-delà, chaque kilomètre supplémentaire est facturé [X] €.' },
+        { h: 'Assurance et sinistres', t: 'Le véhicule est assuré pour un usage VTC/taxi. En cas de sinistre responsable, une franchise de [MONTANT] € reste à la charge du locataire. Tout sinistre doit être déclaré sous [48 h] avec un constat amiable.' },
+        { h: 'Entretien et utilisation', t: 'L’entretien courant est assuré par [RAISON SOCIALE]. Le locataire utilise le véhicule en bon père de famille, signale toute anomalie sans délai et n’autorise aucun autre conducteur sans accord écrit.' },
+        { h: 'Infractions', t: 'Les amendes, péages et contraventions survenus pendant la location sont à la charge du locataire. [RAISON SOCIALE] procède à la désignation du conducteur conformément à la loi.' },
+        { h: 'Durée, restitution et résiliation', t: 'Durée minimale : [X semaines]. Le véhicule est restitué propre, au garage, avec [le même niveau de charge / carburant]. Chaque partie peut mettre fin à la location avec un préavis de [X jours].' },
+        { h: 'Utilisation du site', t: 'Le site présente les offres de [RAISON SOCIALE] à titre informatif. Les demandes envoyées via WhatsApp, téléphone ou e-mail ne valent pas réservation tant qu’elles ne sont pas confirmées par écrit.' },
+        { h: 'Droit applicable', t: 'Les présentes conditions sont soumises au droit français. Tout litige relève des tribunaux compétents de [VILLE].' }
+      ] }
+    };
+    const legalKey = this.state.legal || null;
+    const legalDoc = legalKey ? LEGAL[legalKey] : null;
+    const openLegal = (k) => { this.setState({ legal: k }); setTimeout(() => { try { const el = document.getElementById('mentions-legales'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }, 80); };
+    const chips = ['Tous', 'Électrique', 'Hybride'].map((label) => {
+      const on = label === f;
+      return { label, bg: on ? accent : 'transparent', fg: on ? '#0A0C0F' : '#D5DAE0', bd: on ? accent : '#2E3540', pick: () => this.setState({ filter: label }) };
+    });
+    return {
+      accent,
+      total: cars.length,
+      fleetTotal: cars.reduce((n, c) => n + (c.qty || 0), 0),
+      availCount: cars.length,
+      topRow: all.slice(0, NT),
+      bottomRow: all.slice(NT),
+      groups: groupVals,
+      preview,
+      holdPreview: () => { if (!this.state.hold) this.setState({ hold: pvBrand }); },
+      releasePreview: () => this.setState({ hold: null }),
+      hasPreview: preview.length > 0,
+      hasPin: !!pin,
+      previewTitle: ({ Mercedes: 'V-Class' })[pvBrand] || pvBrand || '',
+      previewCount: preview.length + (preview.length > 1 ? ' modèles' : ' modèle'),
+      clearPreview: () => this.setState({ pin: null, hg: null }),
+      sel,
+      chips,
+      open: !!this.state.open,
+      noneOpen: !this.state.open,
+      close: () => this.setState({ open: false }),
+      navPrev: () => goTo(prevC),
+      navNext: () => goTo(nextC),
+      navPos: (navIdx + 1) + ' / ' + navN,
+      prevName: prevC.model,
+      nextName: nextC.model,
+      tStart: (e) => { this._tx = e.touches && e.touches[0] ? e.touches[0].clientX : null; },
+      tEnd: (e) => { if (this._tx == null || !e.changedTouches || !e.changedTouches[0]) return; const dx = e.changedTouches[0].clientX - this._tx; this._tx = null; if (dx < -40) goTo(nextC); else if (dx > 40) goTo(prevC); },
+      leave: () => this.setState({ hover: null }),
+      steps: [
+        { n: '01', title: 'Choisissez une voiture', text: 'Consultez les voitures disponibles en ligne — électriques ou hybrides, avec le prix à la semaine.' },
+        { n: '02', title: 'Écrivez-nous', text: 'Sans caution : un seul tarif, tout est déjà inclus.' },
+        { n: '03', title: 'Prenez la route', text: 'Récupérez les clés au garage et roulez sur Uber, Bolt et Heetch — démarrage en 10 minutes.' }
+      ],
+      perks: [
+        { big: '0 €', title: 'Sans caution', text: 'Aucun dépôt au début de la location.' },
+        { big: 'dès 250 €', title: 'Par semaine, tout compris', text: 'Un seul paiement, sans frais cachés.' },
+        { big: '24/7', title: 'Assistance', text: 'Disponible à tout moment pendant que vous roulez.' }
+      ],
+      legalOpen: !!legalDoc,
+      legalTitle: legalDoc ? legalDoc.title : '',
+      legalItems: legalDoc ? legalDoc.items : [],
+      openMentions: () => openLegal('mentions'),
+      openPrivacy: () => openLegal('privacy'),
+      openCgv: () => openLegal('cgv'),
+      closeLegal: () => this.setState({ legal: null }),
+      showCookies: !this.state.cookieChoice,
+      acceptCookies: () => this.setState({ cookieChoice: 'accept' }),
+      refuseCookies: () => this.setState({ cookieChoice: 'refuse' }),
+      partners: [
+        { title: 'Drivio Flexible', text: 'Louez votre véhicule avec votre propre structure. Assurance, entretien et assistance incluses.' },
+        { title: 'Drivio Flexible + Coopérative', text: 'Votre véhicule et l’accompagnement Drivio : contrat d’entrepreneur salarié en CDI, fiches de paie et gestion administrative simplifiée.' },
+        { title: 'Drivio Propriété', text: 'Un parcours de 48 mois avec rachat final pour devenir propriétaire. Avec votre structure ou la coopérative.' }
+      ]
+    };
+  }
+}
+</script>
+<script type="text/plain" id="js-mob">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props); this.state = { sel: 1, filter: 'Tous', tour: 0 };
+    this._tour = setInterval(() => { const s = this.state || {}; if (!s.hover && !s.hg && !s.pin && !s.open) this.setState({ tour: (s.tour || 0) + 1 }); }, 1800);
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#D4FF3A';
+    const K = '#1F242B', R = '#3A414C', G = '#4A5361', B = '#233F73';
+    const cars = [
+      { id: 20, model: 'BYD Atto 2 DM-i', cls: 'Hybride', qty: null, day: 58, week: 400, color: K },
+      { id: 1, model: 'BYD Seal', cls: 'Électrique', qty: 7, day: 69, week: 480, color: K },
+      { id: 21, model: 'BYD Sealion 7', cls: 'Électrique', qty: null, day: 72, week: 500, color: K },
+      { id: 2, model: 'Hyundai Kona', cls: 'Hybride', qty: 10, day: 55, week: 380, color: R },
+      { id: 3, model: 'Hyundai Kona Electric', cls: 'Électrique', qty: 7, day: 58, week: 400, color: B },
+      { id: 22, model: 'Hyundai Tucson Hybrid', cls: 'Hybride', qty: null, day: 58, week: 400, color: K },
+      { id: 4, model: 'Kia EV3', cls: 'Électrique', qty: 10, day: 57, week: 400, color: G },
+      { id: 5, model: 'Kia EV6', cls: 'Électrique', qty: 2, day: 62, week: 430, color: K },
+      { id: 6, model: 'Kia Niro', cls: 'Hybride', qty: 1, day: 43, week: 300, color: R },
+      { id: 8, model: 'Suzuki Swace', cls: 'Hybride', qty: 8, day: 50, week: 350, color: G },
+      { id: 19, model: 'Suzuki Vitara', cls: 'Hybride', qty: 2, day: 50, week: 350, color: B },
+      { id: 9, model: 'Tesla Model 3', cls: 'Électrique', qty: 3, day: 65, week: 450, color: K },
+      { id: 10, model: 'Tesla Model Y', cls: 'Électrique', qty: 5, day: 69, week: 480, color: K },
+      { id: 7, model: 'Lexus UX 250h', cls: 'Hybride', qty: 7, day: 57, week: 400, color: K },
+      { id: 11, model: 'Toyota Auris', cls: 'Hybride', qty: 1, day: 43, week: 300, color: G },
+      { id: 12, model: 'Toyota bZ4X', cls: 'Électrique', qty: 2, day: 57, week: 400, color: R },
+      { id: 25, model: 'Toyota CHR', cls: 'Hybride', qty: null, day: 46, week: 320, color: G },
+      { id: 13, model: 'Toyota CHR - HEV', cls: 'Hybride', qty: 27, day: 53, week: 370, color: K },
+      { id: 14, model: 'Toyota Camry', cls: 'Hybride', qty: 1, day: 57, week: 400, color: K },
+      { id: 16, model: 'Toyota Corolla Touring', cls: 'Hybride', qty: 1, day: 52, week: 360, color: R },
+      { id: 17, model: 'Toyota Prius', cls: 'Hybride', qty: 1, day: 36, week: 250, color: K },
+      { id: 18, model: 'Toyota RAV4', cls: 'Hybride', qty: 1, day: 54, week: 380, color: G },
+      { id: 24, model: 'Mercedes V-Class', cls: 'Premium', qty: null, day: 108, week: 750, color: K }
+    ];
+    const eur = (v, suf) => v ? 'dès ' + v + ' €' + (suf || '') : 'Prix à venir';
+    const SPECS = {
+      'BYD Atto 2 DM-i': { hp: '212 ch', conso: '≈ 1,8 L/100 km (WLTP)', range: 'jusqu’à 90 km en électrique', nrg: 'Hybride rechargeable', photo: 'img/0935266956d4ff860d845eefabd000cf.webp' },
+      'BYD Sealion 7': { hp: '313 ch', conso: '≈ 18 kWh/100 km', range: 'jusqu’à 480 km', photo: 'img/f05c97ac4dcf7d143c2d20b67adfdcc1.webp' },
+      'Hyundai Tucson Hybrid': { range: '≈ 930 km avec un plein', hp: '215 ch', conso: '≈ 5,6 L/100 km', photo: 'img/c4aa88bacf5cf7c6539de597d3ba1257.webp' },
+      'Toyota Corolla Berline': { range: '≈ 950 km avec un plein', hp: '140 ch', conso: '≈ 4,5 L/100 km', photo: 'img/a3421077e90b6266429061a51701312c.webp' },
+      'BYD Seal': { hp: '313 ch', conso: '≈ 16,6 kWh/100 km', range: 'jusqu’à 570 km', photo: 'img/52b7fd79f2f938446aa5ce554c9e4fb7.webp' },
+      'Hyundai Kona': { range: '≈ 840 km avec un plein', hp: '141 ch', conso: '≈ 4,5 L/100 km', photo: 'img/c39aa2d147cf025aaa566da8335874b6.webp' },
+      'Hyundai Kona Electric': { hp: '218 ch', conso: '≈ 14,7 kWh/100 km', range: 'jusqu’à 514 km', photo: 'img/62d7554f675cbe71848e3bb3effce383.webp' },
+      'Kia EV3': { hp: '204 ch', conso: '≈ 14,9 kWh/100 km', range: 'jusqu’à 605 km', photo: 'img/a44ca4d794e5b55d13c7862febdcc98d.webp' },
+      'Kia EV6': { hp: '229 ch', conso: '≈ 16,5 kWh/100 km', range: 'jusqu’à 528 km', photo: 'img/4876c68422e2b45f1afa4263a814a3db.webp' },
+      'Kia Niro': { range: '≈ 950 km avec un plein', hp: '141 ch', conso: '≈ 4,4 L/100 km', photo: 'img/2dc0f81e0553832283c74e6ab2fffd3b.webp' },
+      'Lexus UX 250h': { range: '≈ 830 km avec un plein', hp: '184 ch', conso: '≈ 5,2 L/100 km', photo: 'img/15dd7aaae46edef399b4acd4d77e3ea3.webp' },
+      'Suzuki Swace': { range: '≈ 950 km avec un plein', hp: '122 ch', conso: '≈ 4,5 L/100 km', photo: 'img/6f07eeff6639507a89e46957466708d0.webp' },
+      'Suzuki Vitara': { range: '≈ 840 km avec un plein', hp: '129 ch', conso: '≈ 5,6 L/100 km', photo: 'img/f621a6c774133160f384aefe6e69cbfd.webp' },
+      'Tesla Model 3': { hp: '283 ch', conso: '≈ 13,2 kWh/100 km', range: 'jusqu’à 554 km', photo: 'img/78462a958ec435c524fa0b3848e51cd7.webp' },
+      'Tesla Model Y': { hp: '299 ch', conso: '≈ 15,0 kWh/100 km', range: 'jusqu’à 500 km', photo: 'img/0d13550b1dd03c05ab8b2874861ab1a0.webp' },
+      'Toyota Auris': { range: '≈ 1 000 km avec un plein', hp: '136 ch', conso: '≈ 4,5 L/100 km', photo: 'img/c31874ccb516e33c39fca4c300069639.webp' },
+      'Toyota bZ4X': { hp: '204 ch', conso: '≈ 14,4 kWh/100 km', range: 'jusqu’à 513 km', photo: 'img/4c159a28ec784c87223db8f05ef22c0e.webp' },
+      'Toyota CHR': { range: '≈ 860 km avec un plein', hp: '122 ch', conso: '≈ 5,0 L/100 km', photo: 'img/3674f5d6019c5a51e73347eea5d5ca08.webp' },
+      'Toyota CHR - HEV': { range: '≈ 890 km avec un plein', hp: '140 ch', conso: '≈ 4,8 L/100 km', photo: 'img/3111b07206217a3e50982cf5d218b058.webp' },
+      'Toyota Camry': { range: '≈ 920 km avec un plein', hp: '218 ch', conso: '≈ 5,4 L/100 km', photo: 'img/aabb18b22a8354109f6f2427d17197fa.webp' },
+      'Toyota Corolla': { range: '≈ 930 km avec un plein', hp: '140 ch', conso: '≈ 4,6 L/100 km', photo: 'img/66af80fe6f52aeb3cdb62d813c68a116.webp' },
+      'Toyota Corolla Touring': { range: '≈ 910 km avec un plein', hp: '140 ch', conso: '≈ 4,7 L/100 km', photo: 'img/cfd6d5936e4dff9a7afb60fe33e84741.webp' },
+      'Toyota Prius': { range: '≈ 1 070 km avec un plein', hp: '122 ch', conso: '≈ 4,0 L/100 km', photo: 'img/6423ebfefb955830b7b66068fbbc676b.webp' },
+      'Mercedes V-Class': { range: '≈ 770 km avec un plein', hp: '190 ch', conso: '≈ 7,4 L/100 km (WLTP)', nrg: 'Diesel', places: '7 – 8', photo: 'img/5ee9a88ecb4dbdd1247e02126f254888.webp' },
+      'Toyota RAV4': { range: '≈ 980 km avec un plein', hp: '218 ch', conso: '≈ 5,6 L/100 km', photo: 'img/162651cf4e1bd8e5673180394f120be7.webp' }
+    };
+    const fiche = (c) => {
+      const sp = SPECS[c.model] || {};
+      const ev = c.cls === 'Électrique';
+      return {
+        photo: sp.photo || '',
+        hasPhoto: !!sp.photo,
+        noPhoto: !sp.photo,
+        month: c.week ? 'dès ' + Math.round(c.week * 52 / 12) + ' €' : 'Prix à venir',
+        weekLabel: eur(c.week),
+        dayLabel: eur(c.day),
+        wa: 'https://wa.me/33768580000?text=' + encodeURIComponent('Bonjour, je suis intéressé par la ' + c.model + ' chez Drivio.'),
+        specs: [
+          { k: 'Consommation', v: sp.conso || '—' },
+          { k: 'Autonomie', v: sp.range || '—' },
+          { k: 'Énergie', v: sp.nrg || (ev ? '100 % électrique' : 'Hybride essence') },
+          { k: 'Usage', v: 'VTC · Taxi' }
+        ]
+      };
+    };
+    const f = this.state.filter;
+    const brandOf = (c) => c.model.split(' ')[0];
+    const BR = []; cars.forEach((c) => { const b = c.model.split(' ')[0]; if (!BR.includes(b)) BR.push(b); });
+    const auto = !this.state.hg && !this.state.open, STEP = 1.6, TOUR = (BR.length * STEP).toFixed(1);
+    const tourB = auto ? BR[(this.state.tour || 0) % BR.length] : null;
+    const hg = this.state.hg || tourB;
+    const selC = this.state.open ? cars.find((c) => c.id === this.state.sel) : null;
+    const pvBrand = hg || (selC ? selC.model.split(' ')[0] : null);
+    const preview = pvBrand ? cars.filter((c) => c.model.split(' ')[0] === pvBrand).map((c) => { const sp = SPECS[c.model] || {}; const cur = !!selC && selC.id === c.id; return { curFlag: cur ? '1' : '0', model: c.model, bd: cur ? '#D4FF3A' : '#2A313C', glow: cur ? '0 0 18px rgba(212,255,58,.35)' : 'none', photo: sp.photo || '', price: c.week ? 'dès ' + c.week + ' €/sem' : 'Prix à venir', pick: () => { this.setState({ sel: c.id, open: true, hover: null }); setTimeout(() => { try { const el = document.querySelector('[data-card-anchor]'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }, 120); } }; }) : [];
+    if (selC && !this.state.hg) {
+      if (this._centered !== selC.id) {
+        this._centered = selC.id;
+        const first = this._centeredOnce !== true; this._centeredOnce = true;
+        setTimeout(() => {
+          try {
+            const el = document.querySelector('[data-pcur="1"]');
+            const box = el && el.closest('[data-pstrip]');
+            if (!box) return;
+            const left = el.offsetLeft - (box.clientWidth - el.offsetWidth) / 2;
+            box.scrollTo({ left: Math.max(0, left), behavior: first ? 'auto' : 'smooth' });
+          } catch (e) {}
+        }, 90);
+      }
+    } else if (!selC) { this._centered = null; }
+    const selCar = this.state.open ? cars.find((c) => c.id === this.state.sel) : null;
+    const KM = 350 / 704, LH = 1480, TW = 119.64, BW = 109.83, NT = 11;
+    const tourAnim = () => 'none';
+    const all = cars.map((c, i) => {
+      const match = f === 'Tous' || c.cls === f;
+      const on = !!this.state.open && this.state.sel === c.id;
+      const t = i < NT, j = t ? i : i - NT, bw = t ? TW : BW;
+      const x1 = (t ? 88 : 87) + (j + 1) * bw;
+      const inG = hg === brandOf(c);
+      return {
+        ...c,
+        slot: (t ? 'A-' : 'B-') + String(j + 1).padStart(2, '0'),
+        price: eur(c.week),
+        dayPrice: eur(c.day),
+        gear: 'Boîte automatique',
+        fuel: c.cls,
+        op: match ? 1 : 0.12,
+        dim: !match ? 0.72 : (hg && !inG ? (tourB && hg === tourB ? 0.35 : 0.55) : 0),
+        lit: inG && match ? 1 : 0,
+        anim: tourAnim('litTour', c.model.split(' ')[0]),
+        ring: on ? 'inset 0 0 0 2px #D4FF3A, 0 0 18px rgba(212,255,58,.4)' : 'none',
+        pos: 'left: ' + ((t ? 90 : 420) * KM).toFixed(1) + 'px; top: ' + ((LH - x1) * KM).toFixed(1) + 'px; width: ' + ((t ? 182 : 188) * KM).toFixed(1) + 'px; height: ' + (bw * KM).toFixed(1) + 'px',
+        status: c.cls,
+        aria: c.model + ', ' + c.cls + ', ' + (c.week ? 'dès ' + c.week + ' euros par semaine' : 'prix à venir'),
+        pick: () => { this.setState({ sel: c.id, open: true }); setTimeout(() => { try { const el = document.querySelector('[data-card-anchor]'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }, 120); }
+      };
+    });
+    const groups = [];
+    cars.forEach((c, i) => {
+      const top = i < NT, j = top ? i : i - NT, name = brandOf(c), last = groups[groups.length - 1];
+      if (last && last.name === name && last.top === top) { last.j1 = j; last.n++; } else groups.push({ name, top, j0: j, n: 1 });
+    });
+    const groupVals = groups.map((g) => {
+      const bw = g.top ? TW : BW, x0 = (g.top ? 88 : 87) + g.j0 * bw;
+      const L = (g.n === 1 ? bw : g.n * bw - 20) * KM, H = 14;
+      const cy = (LH - (x0 + g.n * bw / 2)) * KM;
+      const cx = g.top ? 282 * KM + 4 + H / 2 : 414 * KM - 4 - H / 2;
+      const on = hg === g.name, warm = !on && selCar && brandOf(selCar) === g.name;
+      return {
+        name: ({ Mercedes: 'V-Class' })[g.name] || g.name,
+        anim: tourAnim('grpTour', g.name),
+        aria: 'Groupe ' + g.name,
+        box: 'left: ' + (cx - L / 2).toFixed(1) + 'px; top: ' + (cy - H / 2).toFixed(1) + 'px; width: ' + L.toFixed(1) + 'px; height: ' + H + 'px; transform: rotate(-90deg)',
+        rowPos: (g.top ? 'bottom: 0' : 'top: 0') + (g.n === 1 ? '; gap: 4px' : ''),
+        txt: g.n === 1 && (({ Mercedes: 'V-Class' })[g.name] || g.name).length > 6 ? 'position: relative; font-size: 9px; letter-spacing: 0.5px; padding-left: 0.5px' : 'position: relative',
+        col: on ? accent : '#ECEEE6',
+        op: on ? 1 : warm ? 0.9 : 0.68,
+        fx: on ? 'drop-shadow(0 0 6px rgba(212,255,58,.6))' : 'none',
+        pick: () => this.setState({ hg: on ? null : g.name })
+      };
+    });
+    const s = all.find((c) => c.id === this.state.sel) || all[0];
+    const sel = { ...s, ...fiche(s) };
+    const navList = all.filter((c) => f === 'Tous' || c.cls === f);
+    const navArr = navList.length ? navList : all;
+    let navIdx = navArr.findIndex((c) => c.id === sel.id);
+    if (navIdx < 0) navIdx = 0;
+    const navN = navArr.length;
+    const prevC = navArr[(navIdx - 1 + navN) % navN], nextC = navArr[(navIdx + 1) % navN];
+    const goTo = (c) => this.setState({ sel: c.id, hover: null, open: true });
+    const LEGAL = {
+      mentions: { title: 'Mentions légales', items: [
+        { h: 'Éditeur du site', t: 'Le site driviocars.fr est édité par [RAISON SOCIALE], [FORME JURIDIQUE] au capital de [MONTANT] €, immatriculée au RCS de [VILLE] sous le numéro [SIREN], dont le siège social est situé [ADRESSE COMPLÈTE]. N° de TVA intracommunautaire : [NUMÉRO DE TVA]. Téléphone : +33 7 68 58 00 00 · E-mail : drivio.cars@gmail.com' },
+        { h: 'Directeur de la publication', t: '[PRÉNOM NOM], en qualité de [FONCTION].' },
+        { h: 'Hébergement', t: 'Le site est hébergé par [NOM DE L’HÉBERGEUR], [ADRESSE DE L’HÉBERGEUR], [TÉLÉPHONE DE L’HÉBERGEUR].' },
+        { h: 'Activité', t: 'Location de véhicules destinés aux chauffeurs VTC et taxi. Les offres, tarifs et disponibilités présentés sur le site sont indicatifs ; seules les conditions du contrat de location font foi. Les données techniques des véhicules (WLTP) sont fournies à titre indicatif.' },
+        { h: 'Propriété intellectuelle', t: 'Les contenus du site (textes, visuels, logo, mise en page) sont la propriété de [RAISON SOCIALE] ou utilisés avec autorisation. Toute reproduction sans accord préalable est interdite. Les marques des constructeurs citées appartiennent à leurs propriétaires. Certains visuels sont des illustrations générées par intelligence artificielle et ne représentent pas nécessairement les véhicules exacts de la flotte.' },
+        { h: 'Liens externes', t: 'Le site renvoie vers des services tiers (WhatsApp, App Store, Google Play, driviovtc.fr). [RAISON SOCIALE] n’est pas responsable de leur contenu.' }
+      ] },
+      privacy: { title: 'Politique de confidentialité', items: [
+        { h: 'Responsable du traitement', t: '[RAISON SOCIALE], [ADRESSE COMPLÈTE]. Contact pour toute question sur vos données : drivio.cars@gmail.com.' },
+        { h: 'Données collectées', t: 'Identité et coordonnées (nom, prénom, téléphone, e-mail, adresse) ; documents nécessaires à la location (pièce d’identité, permis de conduire, carte professionnelle VTC, justificatif de domicile) ; informations de paiement ; données liées au véhicule loué (kilométrage, sinistres, infractions) [et géolocalisation si le véhicule est équipé d’un boîtier — À CONFIRMER].' },
+        { h: 'Finalités et bases légales', t: 'Répondre à vos demandes (mesures précontractuelles) ; conclure et exécuter le contrat de location (exécution du contrat) ; respecter nos obligations comptables, fiscales et de désignation du conducteur (obligation légale) ; prévenir la fraude et protéger la flotte (intérêt légitime).' },
+        { h: 'Destinataires', t: 'Personnel habilité de [RAISON SOCIALE] ; assureur et experts en cas de sinistre ; prestataires techniques (hébergement, messagerie) ; autorités compétentes lorsque la loi l’exige (par exemple pour la désignation du conducteur). Vos données ne sont jamais vendues.' },
+        { h: 'Durée de conservation', t: 'Demandes sans suite : [3 ans] après le dernier contact. Clients : durée du contrat puis [5 ans] (prescription). Pièces comptables : 10 ans. Copies de documents d’identité : supprimées [à la fin du contrat / selon obligation légale].' },
+        { h: 'Vos droits', t: 'Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation, d’opposition et de portabilité. Écrivez à drivio.cars@gmail.com en précisant votre demande. Vous pouvez introduire une réclamation auprès de la CNIL (www.cnil.fr).' },
+        { h: 'Cookies', t: 'Les cookies strictement nécessaires au fonctionnement du site sont toujours actifs. Les cookies de préférences, de statistiques et de marketing ne sont déposés qu’avec votre consentement, que vous pouvez modifier à tout moment via le bandeau « Gérer le consentement ».' }
+      ] },
+      cgv: { title: 'CGV / CGU', items: [
+        { h: 'Objet', t: 'Les présentes conditions encadrent la location de véhicules par [RAISON SOCIALE] à des chauffeurs VTC et taxi, ainsi que l’utilisation du site driviocars.fr. Le contrat de location signé entre les parties prévaut en cas de contradiction.' },
+        { h: 'Conditions requises', t: 'Être titulaire d’un permis B depuis au moins [X] ans, d’une carte professionnelle VTC ou taxi en cours de validité, et fournir une pièce d’identité et un justificatif de domicile. Âge minimum : [X] ans.' },
+        { h: 'Tarifs et paiement', t: 'Les tarifs affichés sont exprimés en euros TTC, à la semaine, assurance et entretien inclus, sans dépôt de garantie. Le loyer est payable [d’avance, chaque semaine] par [MOYEN DE PAIEMENT]. Tout retard de paiement peut entraîner la suspension de la location.' },
+        { h: 'Kilométrage', t: '[X] km inclus par [semaine / mois]. Au-delà, chaque kilomètre supplémentaire est facturé [X] €.' },
+        { h: 'Assurance et sinistres', t: 'Le véhicule est assuré pour un usage VTC/taxi. En cas de sinistre responsable, une franchise de [MONTANT] € reste à la charge du locataire. Tout sinistre doit être déclaré sous [48 h] avec un constat amiable.' },
+        { h: 'Entretien et utilisation', t: 'L’entretien courant est assuré par [RAISON SOCIALE]. Le locataire utilise le véhicule en bon père de famille, signale toute anomalie sans délai et n’autorise aucun autre conducteur sans accord écrit.' },
+        { h: 'Infractions', t: 'Les amendes, péages et contraventions survenus pendant la location sont à la charge du locataire. [RAISON SOCIALE] procède à la désignation du conducteur conformément à la loi.' },
+        { h: 'Durée, restitution et résiliation', t: 'Durée minimale : [X semaines]. Le véhicule est restitué propre, au garage, avec [le même niveau de charge / carburant]. Chaque partie peut mettre fin à la location avec un préavis de [X jours].' },
+        { h: 'Utilisation du site', t: 'Le site présente les offres de [RAISON SOCIALE] à titre informatif. Les demandes envoyées via WhatsApp, téléphone ou e-mail ne valent pas réservation tant qu’elles ne sont pas confirmées par écrit.' },
+        { h: 'Droit applicable', t: 'Les présentes conditions sont soumises au droit français. Tout litige relève des tribunaux compétents de [VILLE].' }
+      ] }
+    };
+    const legalKey = this.state.legal || null;
+    const legalDoc = legalKey ? LEGAL[legalKey] : null;
+    const openLegal = (k) => { this.setState({ legal: k }); setTimeout(() => { try { const el = document.getElementById('mentions-legales'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }, 80); };
+    const chips = ['Tous', 'Électrique', 'Hybride'].map((label) => {
+      const on = label === f;
+      return { label, bg: on ? accent : 'transparent', fg: on ? '#0A0C0F' : '#D5DAE0', bd: on ? accent : '#2E3540', pick: () => this.setState({ filter: label }) };
+    });
+    return {
+      accent,
+      total: cars.length,
+      fleetTotal: cars.reduce((n, c) => n + (c.qty || 0), 0),
+      availCount: cars.length,
+      leftCol: all.slice(0, NT),
+      rightCol: all.slice(NT),
+      groups: groupVals,
+      preview,
+      holdPreview: () => { if (!this.state.hg && pvBrand) this.setState({ hg: pvBrand }); },
+      hasPreview: preview.length > 0,
+      previewTitle: ({ Mercedes: 'V-Class' })[pvBrand] || pvBrand || '',
+      previewCount: preview.length + (preview.length > 1 ? ' modèles' : ' modèle'),
+      clearPreview: () => this.setState({ pg: null }),
+      hasGroup: !!this.state.hg,
+      groupName: this.state.hg || '',
+      clearGroup: () => this.setState({ hg: null }),
+      sel,
+      chips,
+      open: !!this.state.open,
+      noneOpen: !this.state.open,
+      close: () => this.setState({ open: false }),
+      navPrev: () => goTo(prevC),
+      navNext: () => goTo(nextC),
+      navPos: (navIdx + 1) + ' / ' + navN,
+      prevName: prevC.model,
+      nextName: nextC.model,
+      tStart: (e) => { this._tx = e.touches && e.touches[0] ? e.touches[0].clientX : null; },
+      tEnd: (e) => { if (this._tx == null || !e.changedTouches || !e.changedTouches[0]) return; const dx = e.changedTouches[0].clientX - this._tx; this._tx = null; if (dx < -40) goTo(nextC); else if (dx > 40) goTo(prevC); },
+      steps: [
+        { n: '01', title: 'Choisissez une voiture', text: 'Consultez les voitures disponibles en ligne — électriques ou hybrides, avec le prix à la semaine.' },
+        { n: '02', title: 'Écrivez-nous', text: 'Sans caution : un seul tarif, tout est déjà inclus.' },
+        { n: '03', title: 'Prenez la route', text: 'Récupérez les clés au garage et roulez sur Uber, Bolt et Heetch — démarrage en 10 minutes.' }
+      ],
+      perks: [
+        { big: '0 €', title: 'Sans caution', text: 'Aucun dépôt au début de la location.' },
+        { big: 'dès 250 €', title: 'Par semaine, tout compris', text: 'Un seul paiement, sans frais cachés.' },
+        { big: '24/7', title: 'Assistance', text: 'Disponible à tout moment.' }
+      ],
+      legalOpen: !!legalDoc,
+      legalTitle: legalDoc ? legalDoc.title : '',
+      legalItems: legalDoc ? legalDoc.items : [],
+      openMentions: () => openLegal('mentions'),
+      openPrivacy: () => openLegal('privacy'),
+      openCgv: () => openLegal('cgv'),
+      closeLegal: () => this.setState({ legal: null }),
+      showCookies: !this.state.cookieChoice,
+      acceptCookies: () => this.setState({ cookieChoice: 'accept' }),
+      refuseCookies: () => this.setState({ cookieChoice: 'refuse' }),
+      partners: [
+        { title: 'Drivio Flexible', text: 'Louez votre véhicule avec votre propre structure. Assurance, entretien et assistance incluses.' },
+        { title: 'Drivio Flexible + Coopérative', text: 'Votre véhicule et l’accompagnement Drivio : contrat d’entrepreneur salarié en CDI, fiches de paie et gestion administrative simplifiée.' },
+        { title: 'Drivio Propriété', text: 'Un parcours de 48 mois avec rachat final pour devenir propriétaire. Avec votre structure ou la coopérative.' }
+      ]
+    };
+  }
+}
+</script>
+<div id="site"></div>
+<script>
+(function(){
+  var TPL='', MODE=null, comp=null, root=document.getElementById('site'), H=[], pending=false, tplId=null;
+  var EV={onclick:'click',onmouseenter:'mouseenter',onmouseleave:'mouseleave',onfocus:'focus',onblur:'blur',ontouchstart:'touchstart',ontouchend:'touchend'};
+  var EVLIST=['click','mouseenter','mouseleave','focus','blur','touchstart','touchend'];
+  window.DCLogic=class{constructor(p){this.props=p||{};this.state={};} setState(o){Object.assign(this.state,o);schedule();}};
+  function schedule(){ if(pending) return; pending=true; requestAnimationFrame(function(){pending=false; render();}); }
+  function get(path,scope,V){ path=path.trim(); if(path==='true')return true; if(path==='false')return false;
+    var ps=path.split('.'), v=(ps[0] in scope)?scope[ps[0]]:V[ps[0]];
+    for(var i=1;i<ps.length;i++){ if(v==null) return ''; v=v[ps[i]]; } return v; }
+  function sub(str,scope,V){ return str.replace(/\{\{([^}]*)\}\}/g,function(m,e){ var v=get(e,scope,V); return typeof v==='function'?'':(v==null?'':v); }); }
+  function walk(node,scope,V){
+    var kids=Array.prototype.slice.call(node.childNodes);
+    for(var k=0;k<kids.length;k++){ var ch=kids[k];
+      if(ch.nodeType===3){ if(ch.nodeValue.indexOf('{{')>=0) ch.nodeValue=sub(ch.nodeValue,scope,V); continue; }
+      if(ch.nodeType!==1){ continue; }
+      var tag=ch.tagName.toLowerCase();
+      if(tag==='sc-for'){ var list=get(ch.getAttribute('list').replace(/[{}]/g,''),scope,V)||[], as=ch.getAttribute('as'), frag=document.createDocumentFragment();
+        for(var i=0;i<list.length;i++){ var w=document.createElement('div'); w.innerHTML=ch.innerHTML; var sc=Object.assign({},scope); sc[as]=list[i]; walk(w,sc,V); while(w.firstChild) frag.appendChild(w.firstChild); }
+        ch.replaceWith(frag); continue; }
+      if(tag==='sc-if'){ var val=get(ch.getAttribute('value').replace(/[{}]/g,''),scope,V); if(!val){ ch.remove(); continue; } walk(ch,scope,V); ch.replaceWith.apply(ch,Array.prototype.slice.call(ch.childNodes)); continue; }
+      var at=Array.prototype.slice.call(ch.attributes);
+      for(var a=0;a<at.length;a++){ var n=at[a].name, v=at[a].value;
+        if(n.indexOf('hint-')===0){ ch.removeAttribute(n); continue; }
+        if(EV[n]){ ch.removeAttribute(n); var f=get(v.replace(/[{}]/g,''),scope,V); if(typeof f==='function'){ H.push(f); ch.setAttribute('data-h-'+EV[n],String(H.length-1)); } continue; }
+        if(n==='data-dsrc'){ ch.removeAttribute(n); ch.setAttribute('src',sub(v,scope,V)); continue; }
+        if(v.indexOf('{{')>=0) ch.setAttribute(n,sub(v,scope,V)); }
+      walk(ch,scope,V);
+    }
+  }
+  function morph(a,b){
+    if(a.attributes){ var aa=Array.prototype.slice.call(a.attributes); for(var i=0;i<aa.length;i++) if(!b.hasAttribute(aa[i].name)) a.removeAttribute(aa[i].name);
+      for(var j=0;j<b.attributes.length;j++){ var x=b.attributes[j]; if(a.getAttribute(x.name)!==x.value) a.setAttribute(x.name,x.value); } }
+    var ac=Array.prototype.slice.call(a.childNodes), bc=Array.prototype.slice.call(b.childNodes);
+    for(var k=0;k<bc.length;k++){ var p=ac[k], q=bc[k];
+      if(!p){ a.appendChild(q); continue; }
+      if(p.nodeType!==q.nodeType || (p.nodeType===1 && p.tagName!==q.tagName)){ a.replaceChild(q,p); continue; }
+      if(p.nodeType!==1){ if(p.nodeValue!==q.nodeValue) p.nodeValue=q.nodeValue; continue; }
+      morph(p,q); }
+    for(var r=bc.length;r<ac.length;r++) ac[r].remove();
+  }
+  function bind(){
+    var els=root.querySelectorAll('*');
+    for(var i=0;i<els.length;i++){ var el=els[i];
+      for(var e=0;e<EVLIST.length;e++){ var ev=EVLIST[e], id=el.getAttribute('data-h-'+ev);
+        el['on'+ev]= id==null ? null : (function(f){ return function(evt){ f(evt); }; })(H[+id]); } }
+  }
+  function render(){
+    if(!comp) return; H=[];
+    var V=comp.renderVals();
+    var w=document.createElement('div'); w.innerHTML=TPL; walk(w,{},V);
+    if(!root.firstChild){ while(w.firstChild) root.appendChild(w.firstChild); } else { morph(root,w); }
+    bind();
+  }
+  function fit(){
+    var vw=document.documentElement.clientWidth, base=MODE==='m'?390:1440;
+    root.style.zoom = String(vw/base);
+  }
+  function start(){
+    var vw=document.documentElement.clientWidth, mode= vw<820 ? 'm' : 'd';
+    if(mode!==MODE){
+      if(comp && comp._tour) clearInterval(comp._tour);
+      MODE=mode; tplId= mode==='m' ? 'tpl-mob':'tpl-desk'; TPL=document.getElementById(tplId).innerHTML.replace(/ src="\{\{/g,' data-dsrc="{{');
+      document.getElementById('dc-css').textContent=document.getElementById(mode==='m'?'css-mob':'css-desk').textContent;
+      var Comp=new Function(document.getElementById(mode==='m'?'js-mob':'js-desk').textContent+'\n;return Component;')();
+      root.innerHTML=''; comp=new Comp({}); render();
+    }
+    fit();
+  }
+  window.addEventListener('resize',start);
+  start();
+})();
+</script>
