@@ -1188,7 +1188,7 @@ class Component extends DCLogic {
     }
   }
   function morph(a,b){
-    if(a.attributes){ var aa=Array.prototype.slice.call(a.attributes); for(var i=0;i<aa.length;i++) if(!b.hasAttribute(aa[i].name)) a.removeAttribute(aa[i].name);
+    if(a.attributes && a!==root){ var aa=Array.prototype.slice.call(a.attributes); for(var i=0;i<aa.length;i++) if(!b.hasAttribute(aa[i].name)) a.removeAttribute(aa[i].name);
       for(var j=0;j<b.attributes.length;j++){ var x=b.attributes[j]; if(a.getAttribute(x.name)!==x.value) a.setAttribute(x.name,x.value); } }
     var ac=Array.prototype.slice.call(a.childNodes), bc=Array.prototype.slice.call(b.childNodes);
     for(var k=0;k<bc.length;k++){ var p=ac[k], q=bc[k];
