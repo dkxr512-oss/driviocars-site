@@ -636,28 +636,28 @@ class Component extends DCLogic {
     const accent = this.props.accent ?? '#D4FF3A';
     const K = '#1F242B', R = '#3A414C', G = '#4A5361', B = '#233F73';
     const cars = [
-      { id: 20, model: 'BYD Atto 2 DM-i', cls: 'Hybride', qty: null, day: 58, week: 400, color: K },
-      { id: 1, model: 'BYD Seal', cls: 'Électrique', qty: 7, day: 69, week: 480, color: K },
-      { id: 21, model: 'BYD Sealion 7', cls: 'Électrique', qty: null, day: 72, week: 500, color: K },
+      { id: 20, model: 'BYD Atto 2 DM-i', cls: 'Hybride', qty: null, day: 55, week: 380, color: K },
+      { id: 1, model: 'BYD Seal', cls: 'Électrique', qty: 7, day: 65, week: 450, color: K },
+      { id: 21, model: 'BYD Sealion 7', cls: 'Électrique', qty: null, day: 68, week: 470, color: K },
       { id: 2, model: 'Hyundai Kona', cls: 'Hybride', qty: 10, day: 55, week: 380, color: R },
       { id: 3, model: 'Hyundai Kona Electric', cls: 'Électrique', qty: 7, day: 58, week: 400, color: B },
       { id: 22, model: 'Hyundai Tucson Hybrid', cls: 'Hybride', qty: null, day: 58, week: 400, color: K },
-      { id: 4, model: 'Kia EV3', cls: 'Électrique', qty: 10, day: 57, week: 400, color: G },
-      { id: 5, model: 'Kia EV6', cls: 'Électrique', qty: 2, day: 62, week: 430, color: K },
-      { id: 6, model: 'Kia Niro', cls: 'Hybride', qty: 1, day: 43, week: 300, color: R },
+      { id: 4, model: 'Kia EV3', cls: 'Électrique', qty: 10, day: 60, week: 420, color: G },
+      { id: 5, model: 'Kia EV6', cls: 'Électrique', qty: 2, day: 65, week: 450, color: K },
+      { id: 6, model: 'Kia Niro', cls: 'Hybride', qty: 1, day: 55, week: 380, color: R },
       { id: 8, model: 'Suzuki Swace', cls: 'Hybride', qty: 8, day: 50, week: 350, color: G },
       { id: 19, model: 'Suzuki Vitara', cls: 'Hybride', qty: 2, day: 50, week: 350, color: B },
       { id: 9, model: 'Tesla Model 3', cls: 'Électrique', qty: 3, day: 65, week: 450, color: K },
-      { id: 10, model: 'Tesla Model Y', cls: 'Électrique', qty: 5, day: 69, week: 480, color: K },
-      { id: 7, model: 'Lexus UX 250h', cls: 'Hybride', qty: 7, day: 57, week: 400, color: K },
+      { id: 10, model: 'Tesla Model Y', cls: 'Électrique', qty: 5, day: 68, week: 470, color: K },
+      { id: 7, model: 'Lexus UX 250h', cls: 'Hybride', qty: 7, day: 58, week: 400, color: K },
       { id: 11, model: 'Toyota Auris', cls: 'Hybride', qty: 1, day: 43, week: 300, color: G },
-      { id: 12, model: 'Toyota bZ4X', cls: 'Électrique', qty: 2, day: 57, week: 400, color: R },
+      { id: 12, model: 'Toyota bZ4X', cls: 'Électrique', qty: 2, day: 55, week: 380, color: R },
       { id: 25, model: 'Toyota CHR', cls: 'Hybride', qty: null, day: 46, week: 320, color: G },
       { id: 13, model: 'Toyota CHR - HEV', cls: 'Hybride', qty: 27, day: 53, week: 370, color: K },
-      { id: 14, model: 'Toyota Camry', cls: 'Hybride', qty: 1, day: 57, week: 400, color: K },
-      { id: 16, model: 'Toyota Corolla Touring', cls: 'Hybride', qty: 1, day: 52, week: 360, color: R },
-      { id: 17, model: 'Toyota Prius', cls: 'Hybride', qty: 1, day: 36, week: 250, color: K },
-      { id: 18, model: 'Toyota RAV4', cls: 'Hybride', qty: 1, day: 54, week: 380, color: G },
+      { id: 14, model: 'Toyota Camry', cls: 'Hybride', qty: 1, day: 58, week: 400, color: K },
+      { id: 16, model: 'Toyota Corolla Touring', cls: 'Hybride', qty: 1, day: 50, week: 350, color: R },
+      { id: 17, model: 'Toyota Prius', cls: 'Hybride', qty: 1, day: 43, week: 300, color: K },
+      { id: 18, model: 'Toyota RAV4', cls: 'Hybride', qty: 1, day: 58, week: 400, color: G },
       { id: 24, model: 'Mercedes V-Class', cls: 'Premium', qty: null, day: 108, week: 750, color: K }
     ];
     const eur = (v, suf) => v ? 'dès ' + v + ' €' + (suf || '') : 'Prix à venir';
@@ -859,7 +859,7 @@ class Component extends DCLogic {
       ],
       perks: [
         { big: '0 €', title: 'Sans caution', text: 'Aucun dépôt au début de la location.' },
-        { big: 'dès 250 €', title: 'Par semaine, tout compris', text: 'Un seul paiement, sans frais cachés.' },
+        { big: 'dès 300 €', title: 'Par semaine, tout compris', text: 'Un seul paiement, sans frais cachés.' },
         { big: '24/7', title: 'Assistance', text: 'Disponible à tout moment pendant que vous roulez.' }
       ],
       legalOpen: !!legalDoc,
@@ -891,28 +891,28 @@ class Component extends DCLogic {
     const accent = this.props.accent ?? '#D4FF3A';
     const K = '#1F242B', R = '#3A414C', G = '#4A5361', B = '#233F73';
     const cars = [
-      { id: 20, model: 'BYD Atto 2 DM-i', cls: 'Hybride', qty: null, day: 58, week: 400, color: K },
-      { id: 1, model: 'BYD Seal', cls: 'Électrique', qty: 7, day: 69, week: 480, color: K },
-      { id: 21, model: 'BYD Sealion 7', cls: 'Électrique', qty: null, day: 72, week: 500, color: K },
+      { id: 20, model: 'BYD Atto 2 DM-i', cls: 'Hybride', qty: null, day: 55, week: 380, color: K },
+      { id: 1, model: 'BYD Seal', cls: 'Électrique', qty: 7, day: 65, week: 450, color: K },
+      { id: 21, model: 'BYD Sealion 7', cls: 'Électrique', qty: null, day: 68, week: 470, color: K },
       { id: 2, model: 'Hyundai Kona', cls: 'Hybride', qty: 10, day: 55, week: 380, color: R },
       { id: 3, model: 'Hyundai Kona Electric', cls: 'Électrique', qty: 7, day: 58, week: 400, color: B },
       { id: 22, model: 'Hyundai Tucson Hybrid', cls: 'Hybride', qty: null, day: 58, week: 400, color: K },
-      { id: 4, model: 'Kia EV3', cls: 'Électrique', qty: 10, day: 57, week: 400, color: G },
-      { id: 5, model: 'Kia EV6', cls: 'Électrique', qty: 2, day: 62, week: 430, color: K },
-      { id: 6, model: 'Kia Niro', cls: 'Hybride', qty: 1, day: 43, week: 300, color: R },
+      { id: 4, model: 'Kia EV3', cls: 'Électrique', qty: 10, day: 60, week: 420, color: G },
+      { id: 5, model: 'Kia EV6', cls: 'Électrique', qty: 2, day: 65, week: 450, color: K },
+      { id: 6, model: 'Kia Niro', cls: 'Hybride', qty: 1, day: 55, week: 380, color: R },
       { id: 8, model: 'Suzuki Swace', cls: 'Hybride', qty: 8, day: 50, week: 350, color: G },
       { id: 19, model: 'Suzuki Vitara', cls: 'Hybride', qty: 2, day: 50, week: 350, color: B },
       { id: 9, model: 'Tesla Model 3', cls: 'Électrique', qty: 3, day: 65, week: 450, color: K },
-      { id: 10, model: 'Tesla Model Y', cls: 'Électrique', qty: 5, day: 69, week: 480, color: K },
-      { id: 7, model: 'Lexus UX 250h', cls: 'Hybride', qty: 7, day: 57, week: 400, color: K },
+      { id: 10, model: 'Tesla Model Y', cls: 'Électrique', qty: 5, day: 68, week: 470, color: K },
+      { id: 7, model: 'Lexus UX 250h', cls: 'Hybride', qty: 7, day: 58, week: 400, color: K },
       { id: 11, model: 'Toyota Auris', cls: 'Hybride', qty: 1, day: 43, week: 300, color: G },
-      { id: 12, model: 'Toyota bZ4X', cls: 'Électrique', qty: 2, day: 57, week: 400, color: R },
+      { id: 12, model: 'Toyota bZ4X', cls: 'Électrique', qty: 2, day: 55, week: 380, color: R },
       { id: 25, model: 'Toyota CHR', cls: 'Hybride', qty: null, day: 46, week: 320, color: G },
       { id: 13, model: 'Toyota CHR - HEV', cls: 'Hybride', qty: 27, day: 53, week: 370, color: K },
-      { id: 14, model: 'Toyota Camry', cls: 'Hybride', qty: 1, day: 57, week: 400, color: K },
-      { id: 16, model: 'Toyota Corolla Touring', cls: 'Hybride', qty: 1, day: 52, week: 360, color: R },
-      { id: 17, model: 'Toyota Prius', cls: 'Hybride', qty: 1, day: 36, week: 250, color: K },
-      { id: 18, model: 'Toyota RAV4', cls: 'Hybride', qty: 1, day: 54, week: 380, color: G },
+      { id: 14, model: 'Toyota Camry', cls: 'Hybride', qty: 1, day: 58, week: 400, color: K },
+      { id: 16, model: 'Toyota Corolla Touring', cls: 'Hybride', qty: 1, day: 50, week: 350, color: R },
+      { id: 17, model: 'Toyota Prius', cls: 'Hybride', qty: 1, day: 43, week: 300, color: K },
+      { id: 18, model: 'Toyota RAV4', cls: 'Hybride', qty: 1, day: 58, week: 400, color: G },
       { id: 24, model: 'Mercedes V-Class', cls: 'Premium', qty: null, day: 108, week: 750, color: K }
     ];
     const eur = (v, suf) => v ? 'dès ' + v + ' €' + (suf || '') : 'Prix à venir';
@@ -1116,7 +1116,7 @@ class Component extends DCLogic {
       ],
       perks: [
         { big: '0 €', title: 'Sans caution', text: 'Aucun dépôt au début de la location.' },
-        { big: 'dès 250 €', title: 'Par semaine, tout compris', text: 'Un seul paiement, sans frais cachés.' },
+        { big: 'dès 300 €', title: 'Par semaine, tout compris', text: 'Un seul paiement, sans frais cachés.' },
         { big: '24/7', title: 'Assistance', text: 'Disponible à tout moment.' }
       ],
       legalOpen: !!legalDoc,
