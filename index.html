@@ -74,6 +74,7 @@ a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
 .fleetmodal{animation:fmIn .25s ease both}.modalcard{animation:fmCard .35s cubic-bezier(.2,.8,.2,1) both}@keyframes fmIn{from{opacity:0}to{opacity:1}}@keyframes fmCard{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
 .recruit{transition:border-color .25s,box-shadow .25s}.recruit:hover{border-color:#D4FF3A;box-shadow:0 0 40px rgba(212,255,58,.12)}
 .navbtn{transition:border-color .2s,background-color .2s}.navbtn:hover{background-color:#1B2210;box-shadow:0 0 22px rgba(212,255,58,.4)!important}
+.bud{transition:border-color .2s,box-shadow .2s}.bud:focus-within{border-color:#D4FF3A !important;box-shadow:0 0 0 3px rgba(212,255,58,.12)}.bud input::placeholder{color:#4A5361;opacity:1}
 </script>
 <script type="text/plain" id="css-mob">
 body{margin:0;background:#0A0C0F;font-family:Manrope,system-ui,sans-serif;color:#EDEFF2}
@@ -125,6 +126,7 @@ a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
 .navbtn{transition:border-color .2s,background-color .2s}.navbtn:hover{background-color:#1B2210}
 .fleetmodal{animation:fmIn .25s ease both}.modalcard{animation:fmCard .35s cubic-bezier(.2,.8,.2,1) both}@keyframes fmIn{from{opacity:0}to{opacity:1}}@keyframes fmCard{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
 .recruit{transition:border-color .25s,box-shadow .25s}.recruit:active{border-color:#D4FF3A}
+.bud{transition:border-color .2s,box-shadow .2s}.bud:focus-within{border-color:#D4FF3A !important;box-shadow:0 0 0 3px rgba(212,255,58,.12)}.bud input::placeholder{color:#4A5361;opacity:1}
 </script>
 <template id="tpl-desk">
 
@@ -232,6 +234,15 @@ a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
 <span style="font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: {{accent}}">Flotte disponible</span>
 <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 40px; line-height: 1.1; letter-spacing: -1px; color: #FFFFFF; white-space: nowrap">Choisissez une voiture disponible</h2>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #A9B1BC; max-width: 820px">{{total}} modèles — électriques et hybrides, plus le van premium Mercedes Classe V. Survolez une voiture pour voir son prix à la journée et à la semaine.</p>
+</div>
+<div role="search" aria-label="Recherche par budget" style="width: 400px; flex-shrink: 0; display: flex; flex-direction: column; gap: 10px; padding: 16px 18px; border-radius: 22px; border: 1px solid #1D232C; background: #0B0E12; box-sizing: border-box">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; height: 26px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #8A93A0">Budget par semaine</span><button class="navbtn" onClick="{{clearBudget}}" aria-label="Effacer le budget" style="visibility: {{budgetClearVis}}; width: 26px; height: 26px; padding: 0; border-radius: 50%; border: 1px solid #2E3540; background: transparent; color: #D5DAE0; font-size: 12px; cursor: pointer">✕</button></div>
+<div style="display: flex; align-items: center; gap: 10px">
+<label class="bud" style="flex: 1 1 0%; min-width: 0; height: 48px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-radius: 14px; background: #111419; border: 1px solid #2A313C; cursor: text"><span style="font-size: 13px; font-weight: 600; color: #8A93A0">De</span><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" enterkeyhint="done" placeholder="{{budgetLow}}" value="{{bMin}}" onInput="{{setBMin}}" aria-label="Budget minimum par semaine, en euros" style="flex: 1 1 0%; min-width: 0; width: 100%; padding: 0; border: none; outline: none; background: transparent; color: #FFFFFF; font-family: Manrope, sans-serif; font-size: 18px; font-weight: 800"><span style="font-size: 15px; font-weight: 700; color: #8A93A0">€</span></label>
+<span style="width: 10px; height: 2px; border-radius: 1px; background: #3A414C; flex-shrink: 0"></span>
+<label class="bud" style="flex: 1 1 0%; min-width: 0; height: 48px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-radius: 14px; background: #111419; border: 1px solid #2A313C; cursor: text"><span style="font-size: 13px; font-weight: 600; color: #8A93A0">À</span><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" enterkeyhint="done" placeholder="{{budgetHigh}}" value="{{bMax}}" onInput="{{setBMax}}" aria-label="Budget maximum par semaine, en euros" style="flex: 1 1 0%; min-width: 0; width: 100%; padding: 0; border: none; outline: none; background: transparent; color: #FFFFFF; font-family: Manrope, sans-serif; font-size: 18px; font-weight: 800"><span style="font-size: 15px; font-weight: 700; color: #8A93A0">€</span></label>
+</div>
+<span aria-live="polite" style="font-size: 13px; font-weight: 600; line-height: 18px; color: {{budgetNoteColor}}">{{budgetNote}}</span>
 </div>
 </div>
 
@@ -480,6 +491,15 @@ a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
 <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-size: 28px; line-height: 1.15; letter-spacing: -0.5px; color: #FFFFFF">Choisissez une voiture disponible</h2>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A9B1BC">{{total}} modèles — électriques et hybrides, plus le van premium Mercedes Classe V. Touchez une voiture pour voir son prix à la journée et à la semaine.</p>
 </div>
+<div role="search" aria-label="Recherche par budget" style="display: flex; flex-direction: column; gap: 10px; padding: 14px 14px 12px; border-radius: 20px; border: 1px solid #1D232C; background: #0B0E12">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; height: 30px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #8A93A0">Budget par semaine</span><button onClick="{{clearBudget}}" aria-label="Effacer le budget" style="visibility: {{budgetClearVis}}; height: 30px; padding: 0 12px; border-radius: 999px; border: 1px solid #2E3540; background: transparent; color: #D5DAE0; font-family: Manrope, sans-serif; font-size: 12px; font-weight: 700; cursor: pointer">Effacer</button></div>
+<div style="display: flex; align-items: center; gap: 8px">
+<label class="bud" style="flex: 1 1 0%; min-width: 0; height: 48px; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-radius: 14px; background: #111419; border: 1px solid #2A313C; cursor: text"><span style="font-size: 13px; font-weight: 600; color: #8A93A0">De</span><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" enterkeyhint="done" placeholder="{{budgetLow}}" value="{{bMin}}" onInput="{{setBMin}}" aria-label="Budget minimum par semaine, en euros" style="flex: 1 1 0%; min-width: 0; width: 100%; padding: 0; border: none; outline: none; background: transparent; color: #FFFFFF; font-family: Manrope, sans-serif; font-size: 17px; font-weight: 800"><span style="font-size: 14px; font-weight: 700; color: #8A93A0">€</span></label>
+<span style="width: 8px; height: 2px; border-radius: 1px; background: #3A414C; flex-shrink: 0"></span>
+<label class="bud" style="flex: 1 1 0%; min-width: 0; height: 48px; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-radius: 14px; background: #111419; border: 1px solid #2A313C; cursor: text"><span style="font-size: 13px; font-weight: 600; color: #8A93A0">À</span><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" enterkeyhint="done" placeholder="{{budgetHigh}}" value="{{bMax}}" onInput="{{setBMax}}" aria-label="Budget maximum par semaine, en euros" style="flex: 1 1 0%; min-width: 0; width: 100%; padding: 0; border: none; outline: none; background: transparent; color: #FFFFFF; font-family: Manrope, sans-serif; font-size: 17px; font-weight: 800"><span style="font-size: 14px; font-weight: 700; color: #8A93A0">€</span></label>
+</div>
+<span aria-live="polite" style="font-size: 13px; font-weight: 600; line-height: 18px; color: {{budgetNoteColor}}">{{budgetNote}}</span>
+</div>
 
 <div class="rv" style="position: relative; width: 350px; height: 736px; border-radius: 20px; border: 1px solid #1D232C; overflow: hidden; background: #0B0E12">
 <img src="img/e714ffca363321b28f616c0fd64bd455.webp" alt="Parking Drivio vu du dessus : 23 voitures regroupées par marque" style="position: absolute; inset: 0; width: 350px; height: 736px; display: block">
@@ -618,8 +638,8 @@ a{color:#D4FF3A;text-decoration:none}a:hover{color:#E8FF8A}
 <script type="text/plain" id="js-desk">
 class Component extends DCLogic {
   constructor(props) {
-    super(props); this.state = { hover: null, sel: 1, filter: 'Tous', tour: 0 };
-    this._tour = setInterval(() => { const s = this.state || {}; if (!s.hover && !s.hg && !s.pin && !s.open && !s.hold) this.setState({ tour: (s.tour || 0) + 1 }); }, 1800);
+    super(props); this.state = { hover: null, sel: 1, filter: 'Tous', tour: 0, bMin: '', bMax: '' };
+    this._tour = setInterval(() => { const s = this.state || {}; if (!s.hover && !s.hg && !s.pin && !s.open && !s.hold && !s.bMin && !s.bMax) this.setState({ tour: (s.tour || 0) + 1 }); }, 1800);
     if (typeof window !== 'undefined' && !window.__drivioKeys) {
       window.__drivioKeys = true;
       window.addEventListener('keydown', (e) => {
@@ -712,17 +732,25 @@ class Component extends DCLogic {
     const hoverCar = cars.find((c) => c.id === this.state.hover);
     const selCar = this.state.open ? cars.find((c) => c.id === this.state.sel) : null;
     const BR = []; cars.forEach((c) => { const b = c.model.split(' ')[0]; if (!BR.includes(b)) BR.push(b); });
-    const auto = !this.state.hover && !this.state.hg && !this.state.pin && !this.state.open && !this.state.hold, STEP = 1.6, TOUR = (BR.length * STEP).toFixed(1);
+    // Бюджет в неделю: «от» и «до» включительно, пустое поле — без границы
+    const bMin = this.state.bMin ? +this.state.bMin : null, bMax = this.state.bMax ? +this.state.bMax : null;
+    const budgetOn = bMin != null || bMax != null;
+    const inBudget = (c) => !!c.week && (bMin == null || c.week >= bMin) && (bMax == null || c.week <= bMax);
+    const budgetCars = budgetOn ? cars.filter(inBudget).sort((a, b) => a.week - b.week) : [];
+    const weeks = cars.filter((c) => c.week).map((c) => c.week);
+    const digits = (e) => String((e && e.target && e.target.value) || '').replace(/\D/g, '').slice(0, 4);
+    const auto = !this.state.hover && !this.state.hg && !this.state.pin && !this.state.open && !this.state.hold && !budgetOn, STEP = 1.6, TOUR = (BR.length * STEP).toFixed(1);
     const tourB = auto ? BR[(this.state.tour || 0) % BR.length] : null;
     const pin = this.state.pin || null;
     const hg = this.state.hg || pin || this.state.hold || tourB;
     const selC = this.state.open ? cars.find((c) => c.id === this.state.sel) : null;
     const pvBrand = hg || (selC ? selC.model.split(' ')[0] : null);
-    const preview = pvBrand ? cars.filter((c) => c.model.split(' ')[0] === pvBrand).map((c) => { const sp = SPECS[c.model] || {}; const cur = !!selC && selC.id === c.id; return { model: c.model, bd: cur ? '#D4FF3A' : '#2A313C', glow: cur ? '0 0 18px rgba(212,255,58,.35)' : 'none', photo: sp.photo || '', price: c.week ? 'dès ' + c.week + ' €/sem' : 'Prix à venir', pick: () => this.setState({ sel: c.id, open: true, hover: null }) }; }) : [];
+    const pvCars = pvBrand ? cars.filter((c) => c.model.split(' ')[0] === pvBrand) : budgetCars;
+    const preview = pvCars.map((c) => { const sp = SPECS[c.model] || {}; const cur = !!selC && selC.id === c.id; return { model: c.model, bd: cur ? '#D4FF3A' : '#2A313C', glow: cur ? '0 0 18px rgba(212,255,58,.35)' : 'none', photo: sp.photo || '', price: c.week ? 'dès ' + c.week + ' €/sem' : 'Prix à venir', pick: () => this.setState({ sel: c.id, open: true, hover: null }) }; });
     const K0 = 1106 / 1480, TW = 119.64, BW = 109.83, NT = 11;
     const tourAnim = () => 'none';
     const decorate = (c, i) => {
-      const match = f === 'Tous' || c.cls === f;
+      const match = (f === 'Tous' || c.cls === f) && (!budgetOn || inBudget(c));
       const top = i < NT, j = top ? i : i - NT;
       const bw = top ? TW : BW, x = (top ? 88 : 87) + j * bw;
       const y = top ? 90 : 420, h = top ? 182 : 188;
@@ -732,7 +760,7 @@ class Component extends DCLogic {
         pos: 'left: ' + (x * K0).toFixed(1) + 'px; top: ' + (y * K0).toFixed(1) + 'px; width: ' + (bw * K0).toFixed(1) + 'px; height: ' + (h * K0).toFixed(1) + 'px',
         tipPos: top ? 'top: calc(100% + 10px); transform: translateX(-50%)' : 'bottom: calc(100% + 10px); transform: translateX(-50%)',
         dim: !match ? 0.72 : (hg && !inG ? (tourB && hg === tourB ? 0.35 : 0.55) : 0),
-        lit: inG && match ? 1 : 0,
+        lit: match && (inG || (budgetOn && !hg)) ? 1 : 0,
         anim: tourAnim('litTour', c.model.split(' ')[0]),
         selOp: this.state.open && this.state.sel === c.id ? 1 : 0,
         slot: (top ? 'A-' : 'B-') + String(j + 1).padStart(2, '0'),
@@ -834,11 +862,21 @@ class Component extends DCLogic {
       preview,
       holdPreview: () => { if (!this.state.hold) this.setState({ hold: pvBrand }); },
       releasePreview: () => this.setState({ hold: null }),
-      hasPreview: preview.length > 0,
+      hasPreview: preview.length > 0 || (budgetOn && !pvBrand),
       hasPin: !!pin,
-      previewTitle: ({ Mercedes: 'V-Class' })[pvBrand] || pvBrand || '',
-      previewCount: preview.length + (preview.length > 1 ? ' modèles' : ' modèle'),
+      previewTitle: pvBrand ? (({ Mercedes: 'V-Class' })[pvBrand] || pvBrand) : (budgetOn ? 'Budget' : ''),
+      previewCount: preview.length ? preview.length + (preview.length > 1 ? ' modèles' : ' modèle') : 'Aucun modèle',
       clearPreview: () => this.setState({ pin: null, hg: null }),
+      bMin: this.state.bMin,
+      bMax: this.state.bMax,
+      setBMin: (e) => this.setState({ bMin: digits(e), pin: null }),
+      setBMax: (e) => this.setState({ bMax: digits(e), pin: null }),
+      clearBudget: () => this.setState({ bMin: '', bMax: '' }),
+      budgetClearVis: budgetOn ? 'visible' : 'hidden',
+      budgetLow: Math.min(...weeks),
+      budgetHigh: Math.max(...weeks),
+      budgetNote: !budgetOn ? 'Prix de ' + Math.min(...weeks) + ' € à ' + Math.max(...weeks) + ' € par semaine' : budgetCars.length ? budgetCars.length + (budgetCars.length > 1 ? ' modèles' : ' modèle') + ' dans votre budget' : 'Aucun modèle dans ce budget',
+      budgetNoteColor: budgetOn && budgetCars.length ? accent : '#8A93A0',
       sel,
       open: !!this.state.open,
       noneOpen: !this.state.open,
@@ -883,8 +921,8 @@ class Component extends DCLogic {
 <script type="text/plain" id="js-mob">
 class Component extends DCLogic {
   constructor(props) {
-    super(props); this.state = { sel: 1, filter: 'Tous', tour: 0 };
-    this._tour = setInterval(() => { const s = this.state || {}; if (!s.hover && !s.hg && !s.pin && !s.open && !s.hold) this.setState({ tour: (s.tour || 0) + 1 }); }, 1800);
+    super(props); this.state = { sel: 1, filter: 'Tous', tour: 0, bMin: '', bMax: '' };
+    this._tour = setInterval(() => { const s = this.state || {}; if (!s.hover && !s.hg && !s.pin && !s.open && !s.hold && !s.bMin && !s.bMax) this.setState({ tour: (s.tour || 0) + 1 }); }, 1800);
   }
   renderVals() {
     const accent = this.props.accent ?? '#D4FF3A';
@@ -963,12 +1001,19 @@ class Component extends DCLogic {
     const f = this.state.filter;
     const brandOf = (c) => c.model.split(' ')[0];
     const BR = []; cars.forEach((c) => { const b = c.model.split(' ')[0]; if (!BR.includes(b)) BR.push(b); });
-    const auto = !this.state.hg && !this.state.open && !this.state.hold, STEP = 1.6, TOUR = (BR.length * STEP).toFixed(1);
+    // Бюджет в неделю: «от» и «до» включительно, пустое поле — без границы
+    const bMin = this.state.bMin ? +this.state.bMin : null, bMax = this.state.bMax ? +this.state.bMax : null;
+    const budgetOn = bMin != null || bMax != null;
+    const inBudget = (c) => !!c.week && (bMin == null || c.week >= bMin) && (bMax == null || c.week <= bMax);
+    const budgetCars = budgetOn ? cars.filter(inBudget).sort((a, b) => a.week - b.week) : [];
+    const weeks = cars.filter((c) => c.week).map((c) => c.week);
+    const digits = (e) => String((e && e.target && e.target.value) || '').replace(/\D/g, '').slice(0, 4);
+    const auto = !this.state.hg && !this.state.open && !this.state.hold && !budgetOn, STEP = 1.6, TOUR = (BR.length * STEP).toFixed(1);
     const tourB = auto ? BR[(this.state.tour || 0) % BR.length] : null;
     const hg = this.state.hg || this.state.hold || tourB;
     const selC = this.state.open ? cars.find((c) => c.id === this.state.sel) : null;
     const pvBrand = hg || (selC ? selC.model.split(' ')[0] : null);
-    const preview = pvBrand ? cars.filter((c) => c.model.split(' ')[0] === pvBrand).map((c) => { const sp = SPECS[c.model] || {}; const cur = !!selC && selC.id === c.id; return { curFlag: cur ? '1' : '0', model: c.model, bd: cur ? '#D4FF3A' : '#2A313C', glow: cur ? '0 0 18px rgba(212,255,58,.35)' : 'none', photo: sp.photo || '', price: c.week ? 'dès ' + c.week + ' €/sem' : 'Prix à venir', pick: () => { this.setState({ sel: c.id, open: true, hover: null }); setTimeout(() => { try { const el = document.querySelector('[data-card-anchor]'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }, 120); } }; }) : [];
+    const preview = (pvBrand ? cars.filter((c) => c.model.split(' ')[0] === pvBrand) : budgetCars).map((c) => { const sp = SPECS[c.model] || {}; const cur = !!selC && selC.id === c.id; return { curFlag: cur ? '1' : '0', model: c.model, bd: cur ? '#D4FF3A' : '#2A313C', glow: cur ? '0 0 18px rgba(212,255,58,.35)' : 'none', photo: sp.photo || '', price: c.week ? 'dès ' + c.week + ' €/sem' : 'Prix à venir', pick: () => { this.setState({ sel: c.id, open: true, hover: null }); setTimeout(() => { try { const el = document.querySelector('[data-card-anchor]'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }, 120); } }; });
     if (selC && !this.state.hg) {
       if (this._centered !== selC.id) {
         this._centered = selC.id;
@@ -988,7 +1033,7 @@ class Component extends DCLogic {
     const KM = 350 / 704, LH = 1480, TW = 119.64, BW = 109.83, NT = 11;
     const tourAnim = () => 'none';
     const all = cars.map((c, i) => {
-      const match = f === 'Tous' || c.cls === f;
+      const match = (f === 'Tous' || c.cls === f) && (!budgetOn || inBudget(c));
       const on = !!this.state.open && this.state.sel === c.id;
       const t = i < NT, j = t ? i : i - NT, bw = t ? TW : BW;
       const x1 = (t ? 88 : 87) + (j + 1) * bw;
@@ -1002,7 +1047,7 @@ class Component extends DCLogic {
         fuel: c.cls,
         op: match ? 1 : 0.12,
         dim: !match ? 0.72 : (hg && !inG ? (tourB && hg === tourB ? 0.35 : 0.55) : 0),
-        lit: inG && match ? 1 : 0,
+        lit: match && (inG || (budgetOn && !hg)) ? 1 : 0,
         anim: tourAnim('litTour', c.model.split(' ')[0]),
         ring: on ? 'inset 0 0 0 2px #D4FF3A, 0 0 18px rgba(212,255,58,.4)' : 'none',
         pos: 'left: ' + ((t ? 90 : 420) * KM).toFixed(1) + 'px; top: ' + ((LH - x1) * KM).toFixed(1) + 'px; width: ' + ((t ? 182 : 188) * KM).toFixed(1) + 'px; height: ' + (bw * KM).toFixed(1) + 'px',
@@ -1089,10 +1134,20 @@ class Component extends DCLogic {
       preview,
       holdPreview: () => { clearTimeout(this._release); if (!this.state.hg && !this.state.hold && pvBrand) this.setState({ hold: pvBrand }); },
       releasePreview: () => { clearTimeout(this._release); this._release = setTimeout(() => this.setState({ hold: null }), 3000); },
-      hasPreview: preview.length > 0,
-      previewTitle: ({ Mercedes: 'V-Class' })[pvBrand] || pvBrand || '',
-      previewCount: preview.length + (preview.length > 1 ? ' modèles' : ' modèle'),
+      hasPreview: preview.length > 0 || (budgetOn && !pvBrand),
+      previewTitle: pvBrand ? (({ Mercedes: 'V-Class' })[pvBrand] || pvBrand) : (budgetOn ? 'Budget' : ''),
+      previewCount: preview.length ? preview.length + (preview.length > 1 ? ' modèles' : ' modèle') : 'Aucun modèle',
       clearPreview: () => this.setState({ pg: null }),
+      bMin: this.state.bMin,
+      bMax: this.state.bMax,
+      setBMin: (e) => this.setState({ bMin: digits(e), hg: null }),
+      setBMax: (e) => this.setState({ bMax: digits(e), hg: null }),
+      clearBudget: () => this.setState({ bMin: '', bMax: '' }),
+      budgetClearVis: budgetOn ? 'visible' : 'hidden',
+      budgetLow: Math.min(...weeks),
+      budgetHigh: Math.max(...weeks),
+      budgetNote: !budgetOn ? 'Prix de ' + Math.min(...weeks) + ' € à ' + Math.max(...weeks) + ' € par semaine' : budgetCars.length ? budgetCars.length + (budgetCars.length > 1 ? ' modèles' : ' modèle') + ' dans votre budget' : 'Aucun modèle dans ce budget',
+      budgetNoteColor: budgetOn && budgetCars.length ? accent : '#8A93A0',
       hasGroup: !!this.state.hg,
       groupName: this.state.hg || '',
       clearGroup: () => this.setState({ hg: null }),
@@ -1142,8 +1197,8 @@ class Component extends DCLogic {
 <script>
 (function(){
   var TPL='', MODE=null, comp=null, root=document.getElementById('site'), H=[], pending=false, tplId=null;
-  var EV={onclick:'click',onmouseenter:'mouseenter',onmouseleave:'mouseleave',onfocus:'focus',onblur:'blur',ontouchstart:'touchstart',ontouchend:'touchend'};
-  var EVLIST=['click','mouseenter','mouseleave','focus','blur','touchstart','touchend'];
+  var EV={onclick:'click',onmouseenter:'mouseenter',onmouseleave:'mouseleave',onfocus:'focus',onblur:'blur',ontouchstart:'touchstart',ontouchend:'touchend',oninput:'input'};
+  var EVLIST=['click','mouseenter','mouseleave','focus','blur','touchstart','touchend','input'];
   window.DCLogic=class{constructor(p){this.props=p||{};this.state={};} setState(o){Object.assign(this.state,o);schedule();}};
   function schedule(){ if(pending) return; pending=true; requestAnimationFrame(function(){pending=false; render();}); }
   function get(path,scope,V){ path=path.trim(); if(path==='true')return true; if(path==='false')return false;
@@ -1171,7 +1226,8 @@ class Component extends DCLogic {
   }
   function morph(a,b){
     if(a.attributes && a!==root){ var aa=Array.prototype.slice.call(a.attributes); for(var i=0;i<aa.length;i++) if(!b.hasAttribute(aa[i].name)) a.removeAttribute(aa[i].name);
-      for(var j=0;j<b.attributes.length;j++){ var x=b.attributes[j]; if(a.getAttribute(x.name)!==x.value) a.setAttribute(x.name,x.value); } }
+      for(var j=0;j<b.attributes.length;j++){ var x=b.attributes[j]; if(a.getAttribute(x.name)!==x.value) a.setAttribute(x.name,x.value); }
+      if(a.tagName==='INPUT' && b.hasAttribute('value') && a.value!==b.getAttribute('value')) a.value=b.getAttribute('value'); }
     var ac=Array.prototype.slice.call(a.childNodes), bc=Array.prototype.slice.call(b.childNodes);
     for(var k=0;k<bc.length;k++){ var p=ac[k], q=bc[k];
       if(!p){ a.appendChild(q); continue; }
